@@ -1,0 +1,2569 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Bäckerei & Konditorei Weidmann — Die Feinschmecker-Bäckerei in St. Ingbert</title>
+<meta name="description" content="Seit drei Generationen Handwerk in St. Ingbert. Vom Feinschmecker 2013 & 2017 als eine der besten Bäckereien Deutschlands ausgezeichnet." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          bg:         '#FAF6EF',  // base cream
+          bgWarm:     '#F1EADC',  // deeper cream
+          bgTan:      '#E8DEC4',  // warm tan
+          card:       '#F1EADC',
+          cardLight:  '#F5EFE4',
+          crust:      '#A37B36',  // softer brass
+          crustDeep:  '#7E5C26',
+          wheat:      '#B4892F',
+          ink:        '#1C1714',
+          paper:      '#FAF6EF',
+          taupe:      '#6E5C4B',
+          muted:      'rgba(28,23,20,0.55)',
+          line:       'rgba(28,23,20,0.12)',
+          lineDark:   'rgba(28,23,20,0.12)',
+          deep:       '#2A211C',  // for footer only
+        },
+        fontFamily: {
+          serif: ['"Fraunces"', 'ui-serif', 'Georgia', 'serif'],
+          italic: ['"Instrument Serif"', 'ui-serif', 'Georgia', 'serif'],
+          sans:  ['"Inter"', 'ui-sans-serif', 'system-ui'],
+          mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  :root {
+    --bg: #FAF6EF;        /* base cream */
+    --bg-warm: #F1EADC;   /* deeper cream */
+    --bg-tan: #E8DEC4;    /* warm tan */
+    --card: #F1EADC;
+    --card-light: #F5EFE4;
+    --crust: #A37B36;     /* softer brass */
+    --crust-deep: #7E5C26;
+    --wheat: #B4892F;
+    --paper: #FAF6EF;
+    --ink: #1C1714;
+    --walnut: #3A2A1F;
+    --taupe: #6E5C4B;
+    --deep: #2A211C;      /* footer only */
+    --muted: rgba(28,23,20,0.55);
+    --line: rgba(28,23,20,0.12);
+    --line-dark: rgba(28,23,20,0.12);
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Inter", ui-sans-serif, system-ui;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--crust); color: var(--paper); }
+
+  /* Subtle paper grain */
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    z-index: 90; pointer-events: none;
+    opacity: .10; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 0.13  0 0 0 0 0.10  0 0 0 0 0.07  0 0 0 0.5 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  /* ─── Typography ─── */
+  .display {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "SOFT" 100, "opsz" 144, "wght" 380;
+    letter-spacing: -0.035em;
+    line-height: 0.92;
+  }
+  .display-2 {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "SOFT" 80, "opsz" 96, "wght" 400;
+    letter-spacing: -0.025em;
+    line-height: 0.96;
+  }
+  .editorial {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "SOFT" 60, "opsz" 36, "wght" 400;
+    letter-spacing: -0.012em;
+  }
+  .italica {
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .label {
+    font-family: "JetBrains Mono", monospace;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+  }
+  .body-prose {
+    font-family: "Inter", sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    font-weight: 400;
+  }
+  .small {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+  }
+  .figure-num {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "SOFT" 100, "opsz" 144, "wght" 320;
+    letter-spacing: -0.04em;
+    line-height: .85;
+  }
+  .stat-num {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "SOFT" 100, "opsz" 144, "wght" 340;
+    letter-spacing: -.03em;
+    line-height: .9;
+  }
+
+  /* ─── Section base styles ─── */
+  .section-dark   { background: var(--bg-warm); color: var(--ink); }
+  .section-cream  { background: var(--paper);   color: var(--ink); }
+  .section-tan    { background: var(--bg-tan);  color: var(--ink); }
+  .section-deep   { background: var(--deep);    color: var(--paper); }
+
+  /* ─── LIGHT-MODE OVERRIDES — ex-dark sections render warm cream now ─── */
+  .section-dark .text-paper      { color: var(--ink); }
+  .section-dark .text-paper\/50  { color: rgba(28,23,20,.50); }
+  .section-dark .text-paper\/55  { color: rgba(28,23,20,.55); }
+  .section-dark .text-paper\/60  { color: rgba(28,23,20,.60); }
+  .section-dark .text-paper\/65  { color: rgba(28,23,20,.65); }
+  .section-dark .text-paper\/70  { color: rgba(28,23,20,.70); }
+  .section-dark .text-paper\/75  { color: rgba(28,23,20,.75); }
+  .section-dark .text-paper\/80  { color: rgba(28,23,20,.80); }
+  .section-dark .text-paper\/85  { color: rgba(28,23,20,.85); }
+  .section-dark .text-wheat      { color: var(--crust-deep); }
+  .section-dark .border-line     { border-color: rgba(28,23,20,.12); }
+  .section-dark .divide-line > * + * { border-color: rgba(28,23,20,.10); }
+  .section-dark .ring-bg         { --tw-ring-color: var(--bg-warm); }
+  .section-dark .bg-card         { background: var(--card-light); }
+  .section-dark .card-dark {
+    background: var(--card-light);
+    box-shadow:
+      inset 0 0 0 1px rgba(28,23,20,.07),
+      0 24px 60px -28px rgba(28,23,20,.18);
+  }
+  .section-dark .pill {
+    border-color: rgba(28,23,20,.22);
+    color: var(--ink);
+    background: rgba(245,239,230,.5);
+  }
+  .section-dark .pill-crust {
+    border-color: rgba(163,123,54,.55);
+    color: var(--crust-deep);
+    background: rgba(163,123,54,.08);
+  }
+  .section-dark .btn-ghost-dark {
+    color: var(--ink);
+    box-shadow: inset 0 0 0 1px rgba(28,23,20,.3);
+  }
+  .section-dark .btn-ghost-dark:hover { background: rgba(28,23,20,.05); }
+  .section-dark .btn-crust { background: var(--ink); color: var(--paper); }
+  .section-dark .btn-crust:hover { background: var(--walnut); }
+
+  /* Hero gets the cleanest cream */
+  #hero { background: var(--paper); }
+
+  /* Backstube gets the warmest tone for intimate story feel */
+  #backstube { background: var(--bg-tan); }
+
+  /* Footer is the one dark moment */
+  footer.section-dark { background: var(--deep); color: var(--paper); }
+  footer.section-dark .text-paper { color: var(--paper); }
+  footer.section-dark .text-paper\/55 { color: rgba(250,246,239,.55); }
+  footer.section-dark .text-paper\/70 { color: rgba(250,246,239,.70); }
+  footer.section-dark .text-wheat { color: #D9B97E; }
+  footer.section-dark .border-line { border-color: rgba(250,246,239,.18); }
+  footer.section-dark .btn-crust { background: var(--crust); color: var(--ink); }
+  footer.section-dark .btn-ghost-dark { color: var(--paper); box-shadow: inset 0 0 0 1px rgba(250,246,239,.3); }
+
+  /* Nav transparent → cream on scroll */
+  .nav.is-scrolled {
+    background: rgba(250,246,239,.85) !important;
+    border-bottom-color: rgba(28,23,20,.08) !important;
+  }
+  .nav a.label, .nav .label { color: rgba(28,23,20,.7); }
+  .nav .editorial { color: var(--ink); }
+  .nav-link::after { background: var(--ink); }
+
+  /* Crust glow OFF — we don't use it anymore */
+  .crust-glow { display: none !important; }
+
+  /* ─── ON-DARK-OVERLAY — text over image gradients must stay LIGHT ─── */
+  .on-dark-overlay .text-paper      { color: var(--paper); }
+  .on-dark-overlay .text-paper\/55  { color: rgba(250,246,239,.55); }
+  .on-dark-overlay .text-paper\/60  { color: rgba(250,246,239,.60); }
+  .on-dark-overlay .text-paper\/65  { color: rgba(250,246,239,.65); }
+  .on-dark-overlay .text-paper\/70  { color: rgba(250,246,239,.70); }
+  .on-dark-overlay .text-paper\/75  { color: rgba(250,246,239,.75); }
+  .on-dark-overlay .text-paper\/80  { color: rgba(250,246,239,.80); }
+  .on-dark-overlay .text-paper\/85  { color: rgba(250,246,239,.85); }
+  .on-dark-overlay .text-wheat      { color: #D9B97E; }
+  .on-dark-overlay .btn-ghost-dark  { color: var(--paper); box-shadow: inset 0 0 0 1px rgba(250,246,239,.3); }
+  .on-dark-overlay .btn-ghost-dark:hover { background: rgba(250,246,239,.08); }
+  .on-dark-overlay .btn-crust       { background: var(--crust); color: var(--ink); }
+  .on-dark-overlay .btn-crust:hover { background: #D9B97E; }
+  .on-dark-overlay .section-marker  { color: rgba(250,246,239,.7); }
+
+  /* Ghost num — soften */
+  .ghost-num {
+    -webkit-text-stroke: 0;
+    color: rgba(163,123,54,.10);
+  }
+
+  /* Section header "§ 02 · PHILOSOPHIE" */
+  .section-marker {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: baseline;
+    gap: .9rem;
+  }
+  .section-marker .sec-num {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-variation-settings: "opsz" 96, "wght" 380;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    color: var(--crust);
+    line-height: 1;
+  }
+
+  /* ─── Hairline dividers ─── */
+  .rule-dark { border-top: 1px solid var(--line); }
+  .rule-light { border-top: 1px solid var(--line-dark); }
+
+  /* ─── Buttons ─── */
+  .btn {
+    display: inline-flex; align-items: center; gap: .65rem;
+    padding: 14px 22px;
+    border-radius: 999px;
+    font-family: "JetBrains Mono", monospace;
+    text-transform: uppercase;
+    font-size: 11.5px;
+    letter-spacing: .22em;
+    transition: transform .35s cubic-bezier(.16,1,.3,1), background-color .35s, color .35s, box-shadow .35s;
+    cursor: pointer;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+  .btn-crust {
+    background: var(--crust); color: var(--bg);
+    box-shadow: 0 16px 34px -16px rgba(200,119,46,.5), inset 0 0 0 1px rgba(255,255,255,.12);
+  }
+  .btn-crust:hover { transform: translateY(-2px); background: var(--wheat); }
+  .btn-cream {
+    background: var(--paper); color: var(--bg);
+    box-shadow: 0 14px 30px -16px rgba(28,23,20,.6);
+  }
+  .btn-cream:hover { transform: translateY(-2px); background: #fff; }
+  .btn-ghost-dark {
+    background: transparent; color: var(--paper);
+    box-shadow: inset 0 0 0 1px rgba(245,239,230,.28);
+  }
+  .btn-ghost-dark:hover { background: rgba(245,239,230,.06); }
+  .btn-ghost-light {
+    background: transparent; color: var(--ink);
+    box-shadow: inset 0 0 0 1px rgba(28,23,20,.3);
+  }
+  .btn-ghost-light:hover { background: rgba(28,23,20,.05); }
+  .btn .arrow { transition: transform .35s; display: inline-block; }
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  /* ─── Pills ─── */
+  .pill {
+    display: inline-flex; align-items: center; gap: .45rem;
+    border: 1px solid rgba(28,23,20,.22);
+    border-radius: 999px;
+    padding: .4rem .85rem;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10.5px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: rgba(245,239,230,.5);
+    backdrop-filter: blur(4px);
+  }
+  .pill-crust {
+    border-color: rgba(163,123,54,.55);
+    color: var(--crust-deep);
+    background: rgba(163,123,54,.08);
+  }
+  .pill-light {
+    border-color: rgba(28,23,20,.3);
+    color: var(--ink);
+    background: rgba(28,23,20,.04);
+  }
+  .pill-light.pill-crust {
+    border-color: var(--crust-deep);
+    color: var(--crust-deep);
+    background: rgba(200,119,46,.08);
+  }
+
+  /* ─── Hover lift images ─── */
+  .img-wrap { overflow: hidden; position: relative; border-radius: 6px; }
+  .img-wrap img {
+    transition: transform 1.6s cubic-bezier(.16,1,.3,1), filter 1.6s ease;
+    will-change: transform;
+  }
+  .img-wrap:hover img { transform: scale(1.06); }
+
+  /* ─── Reveal animations ─── */
+  [data-reveal] {
+    opacity: 0; transform: translateY(32px);
+    transition: opacity 1.1s cubic-bezier(.16,1,.3,1), transform 1.1s cubic-bezier(.16,1,.3,1);
+  }
+  [data-reveal].is-in { opacity: 1; transform: translateY(0); }
+  [data-reveal-stagger] > * {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1);
+  }
+  [data-reveal-stagger].is-in > * { opacity: 1; transform: translateY(0); }
+  [data-reveal-stagger].is-in > *:nth-child(1) { transition-delay: .00s; }
+  [data-reveal-stagger].is-in > *:nth-child(2) { transition-delay: .09s; }
+  [data-reveal-stagger].is-in > *:nth-child(3) { transition-delay: .18s; }
+  [data-reveal-stagger].is-in > *:nth-child(4) { transition-delay: .27s; }
+  [data-reveal-stagger].is-in > *:nth-child(5) { transition-delay: .36s; }
+  [data-reveal-stagger].is-in > *:nth-child(6) { transition-delay: .45s; }
+
+  /* Headline line reveal */
+  .line-reveal { display: inline-block; overflow: hidden; line-height: 1; padding-bottom: .12em; }
+  .line-reveal > span {
+    display: inline-block; transform: translateY(105%);
+    transition: transform 1.1s cubic-bezier(.16,1,.3,1);
+  }
+  .line-reveal.is-in > span { transform: translateY(0); }
+  .line-reveal:nth-child(2) > span { transition-delay: .12s; }
+  .line-reveal:nth-child(3) > span { transition-delay: .24s; }
+  .line-reveal:nth-child(4) > span { transition-delay: .36s; }
+
+  /* ─── Marquee ─── */
+  .marquee { overflow: hidden; position: relative; }
+  .marquee-track {
+    display: flex; gap: 4rem;
+    width: max-content;
+    animation: marquee 70s linear infinite;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+
+  /* ─── Nav ─── */
+  .nav {
+    transition: background-color .5s ease, backdrop-filter .5s ease, border-color .5s ease;
+    border-bottom: 1px solid transparent;
+  }
+  .nav.is-scrolled {
+    background: rgba(28,23,20,.78);
+    backdrop-filter: saturate(140%) blur(16px);
+    -webkit-backdrop-filter: saturate(140%) blur(16px);
+    border-bottom-color: rgba(245,239,230,.08);
+  }
+
+  /* ─── Wax seal ─── */
+  .seal {
+    background:
+      radial-gradient(120% 120% at 30% 20%, rgba(255,255,255,.22), transparent 60%),
+      conic-gradient(from 210deg, #6b4a1b, #d18d3a, #6b4a1b, #8b6429, #c8772e, #6b4a1b);
+    color: #f5e8c8;
+    box-shadow:
+      0 0 0 1px rgba(0,0,0,.4),
+      inset 0 0 0 6px rgba(0,0,0,.2),
+      inset 0 0 0 7px rgba(245,232,200,.45),
+      0 20px 40px -16px rgba(0,0,0,.55);
+  }
+  .seal-tilt { transition: transform .8s cubic-bezier(.16,1,.3,1); }
+  .seal-tilt:hover { transform: rotate(-8deg) scale(1.04); }
+
+  /* ─── Letterpress for cream sections ─── */
+  .card-cream {
+    background: var(--card-light);
+    box-shadow:
+      inset 0 0 0 1px rgba(28,23,20,.06),
+      0 24px 60px -28px rgba(28,23,20,.18);
+    border-radius: 6px;
+  }
+  .card-dark {
+    background: var(--card);
+    box-shadow:
+      inset 0 0 0 1px rgba(245,239,230,.06),
+      0 24px 60px -28px rgba(0,0,0,.5);
+    border-radius: 6px;
+  }
+
+  /* ─── Live dot ─── */
+  .live-dot {
+    width: 8px; height: 8px; border-radius: 999px; background: var(--crust);
+    position: relative;
+    box-shadow: 0 0 0 0 rgba(200,119,46,.55);
+    animation: pulse 2.4s ease-out infinite;
+  }
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(200,119,46,.55); }
+    70%  { box-shadow: 0 0 0 12px rgba(200,119,46,0); }
+    100% { box-shadow: 0 0 0 0 rgba(200,119,46,0); }
+  }
+
+  /* ─── Pillar Card ─── */
+  .pillar-card {
+    transition: transform .6s cubic-bezier(.16,1,.3,1), box-shadow .6s ease;
+    will-change: transform;
+  }
+  .pillar-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px -28px rgba(0,0,0,.5);
+  }
+  .pillar-card .pillar-img { transition: transform 1.6s cubic-bezier(.16,1,.3,1); }
+  .pillar-card:hover .pillar-img { transform: scale(1.06); }
+
+  /* ─── Stamp ─── */
+  .stamp {
+    transform: rotate(-6deg);
+    border: 1.5px solid var(--crust);
+    color: var(--crust);
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10.5px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    background: rgba(200,119,46,.08);
+    text-align: center;
+    line-height: 1.35;
+    backdrop-filter: blur(6px);
+  }
+  .stamp.light {
+    border-color: var(--crust-deep);
+    color: var(--crust-deep);
+    background: rgba(255,255,255,.7);
+  }
+
+  /* ─── Comparison ─── */
+  .check {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; border-radius: 999px;
+    background: var(--crust); color: var(--paper);
+    flex: 0 0 28px; font-weight: 600;
+  }
+  .cross {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; border-radius: 999px;
+    background: rgba(28,23,20,.06); color: rgba(28,23,20,.4);
+    flex: 0 0 28px;
+  }
+
+  /* ─── Timeline ─── */
+  .timeline-rail { position: relative; }
+  .timeline-rail::before {
+    content: ""; position: absolute; left: 0; right: 0; top: 30px;
+    height: 1px; background: linear-gradient(to right, transparent, var(--crust) 8%, var(--crust) 92%, transparent);
+  }
+
+  /* ─── Sticky mobile bar ─── */
+  .mobile-bar {
+    position: fixed; left: 0; right: 0; bottom: 0;
+    z-index: 88;
+    background: var(--ink);
+    color: var(--paper);
+    display: flex; align-items: stretch;
+    box-shadow: 0 -10px 30px -10px rgba(0,0,0,.3);
+  }
+  .mobile-bar a {
+    flex: 1; display: flex; align-items: center; justify-content: center; gap: .55rem;
+    padding: 14px 12px;
+    font-family: "JetBrains Mono", monospace;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: .2em;
+    border-right: 1px solid rgba(250,246,239,.15);
+  }
+  .mobile-bar a:last-child { border-right: 0; }
+  @media (min-width: 768px) { .mobile-bar { display: none; } }
+  body { padding-bottom: 56px; }
+  @media (min-width: 768px) { body { padding-bottom: 0; } }
+
+  /* ─── Quote ─── */
+  .quote-mark {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "SOFT" 100, "opsz" 144, "wght" 400;
+    font-size: 7rem;
+    line-height: .5;
+    color: var(--crust);
+  }
+
+  /* ─── Wheat decoration ─── */
+  .sway { animation: sway 6s ease-in-out infinite; transform-origin: bottom center; }
+  @keyframes sway {
+    0%,100% { transform: rotate(-2deg); }
+    50%     { transform: rotate(2deg); }
+  }
+
+  /* ─── Map ─── */
+  .map-frame {
+    filter: sepia(.35) saturate(.8) contrast(.95) brightness(.92);
+    transition: filter .6s ease;
+  }
+  .map-frame:hover { filter: sepia(.15) saturate(1) contrast(1) brightness(1); }
+
+  /* ─── Footer wordmark — properly contained ─── */
+  .wordmark-wrap {
+    position: relative;
+    overflow: hidden;
+    line-height: 0.78;
+    padding-top: 2rem;
+    margin-top: 1rem;
+  }
+  .wordmark-text {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "SOFT" 100, "opsz" 144, "wght" 360;
+    letter-spacing: -0.045em;
+    color: var(--paper);
+    display: block;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  /* ─── Stars ─── */
+  .stars { color: var(--crust); letter-spacing: 2px; font-size: 14px; }
+
+  /* ─── Scroller ─── */
+  .scroller {
+    display: flex; gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: 1rem;
+  }
+  .scroller::-webkit-scrollbar { display: none; }
+  .scroller > * { scroll-snap-align: start; flex: 0 0 auto; }
+
+  /* ─── Nav link underline ─── */
+  .nav-link { position: relative; padding: 4px 0; }
+  .nav-link::after {
+    content: ""; position: absolute; left: 0; right: 100%; bottom: -2px;
+    height: 1px; background: var(--paper);
+    transition: right .5s cubic-bezier(.16,1,.3,1);
+  }
+  .nav-link:hover::after { right: 0; }
+
+  /* ─── Ghost background number ─── */
+  .ghost-num {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "SOFT" 100, "opsz" 144, "wght" 300;
+    -webkit-text-stroke: 1px rgba(200,119,46,.35);
+    color: transparent;
+  }
+
+  /* ─── Crust glow ─── */
+  .crust-glow {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(120px);
+    opacity: .35;
+    pointer-events: none;
+  }
+
+  /* ─── Drop cap ─── */
+  .dropcap::first-letter {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "SOFT" 100, "opsz" 144, "wght" 400;
+    float: left;
+    font-size: 5.6rem;
+    line-height: .85;
+    padding: .35rem .65rem 0 0;
+    color: var(--crust);
+  }
+
+  /* ─── Accent dot ─── */
+  .dot {
+    width: 5px; height: 5px; border-radius: 999px; background: var(--crust);
+    display: inline-block; vertical-align: middle;
+  }
+
+  /* ─── Counter underline ─── */
+  .text-underline-crust {
+    background-image: linear-gradient(var(--crust), var(--crust));
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+    padding-bottom: 4px;
+  }
+
+  /* ─── Arch image mask ─── */
+  .arch-soft {
+    border-radius: 240px 240px 6px 6px;
+  }
+  @media (min-width: 768px) {
+    .arch-soft { border-radius: 360px 360px 6px 6px; }
+  }
+
+  /* ─── Scroll progress bar ─── */
+  .scroll-progress {
+    position: fixed; top: 0; left: 0;
+    height: 2px;
+    background: var(--crust);
+    transform-origin: 0 50%;
+    z-index: 95;
+    width: 100%;
+    transform: scaleX(0);
+  }
+
+  /* ─── Floating CTA ─── */
+  .floating-cta {
+    position: fixed;
+    right: 24px;
+    bottom: 80px;
+    z-index: 88;
+    opacity: 0;
+    transform: translateY(20px) scale(.9);
+    transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1);
+    pointer-events: none;
+  }
+  .floating-cta.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+  .floating-cta .btn {
+    box-shadow: 0 24px 50px -16px rgba(200,119,46,.6), 0 8px 16px -8px rgba(0,0,0,.3);
+  }
+  @media (max-width: 767px) {
+    .floating-cta { bottom: 70px; right: 16px; }
+  }
+
+  /* ─── Parallax wrapper (perspective) ─── */
+  .parallax-wrap {
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  /* ─── Horizontal scroll section ─── */
+  .h-scroll-section {
+    position: relative;
+    height: 300vh;
+  }
+  .h-scroll-pin {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .h-scroll-track {
+    display: flex;
+    will-change: transform;
+    padding-left: 6vw;
+  }
+  .h-scroll-card {
+    flex: 0 0 70vw;
+    margin-right: 3vw;
+  }
+  @media (min-width: 768px) {
+    .h-scroll-card { flex: 0 0 36vw; margin-right: 2vw; }
+  }
+
+  /* ─── Sticky portrait wrapper ─── */
+  .sticky-portrait {
+    position: sticky;
+    top: 100px;
+  }
+
+  /* ─── Velocity-based skew ─── */
+  .velocity-skew {
+    will-change: transform;
+    transition: transform .35s cubic-bezier(.2,.7,.2,1);
+  }
+
+  /* ─── EXPAND-TO-BACKGROUND scroll effect ─── */
+  .expand-section {
+    position: relative;
+    height: 260vh;
+  }
+  .expand-sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+  }
+  .expand-pre {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    pointer-events: none;
+    transition: opacity .5s ease;
+    z-index: 1;
+  }
+  .expand-frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    --inset-y: 22vh;
+    --inset-x: 31vw;
+    --radius: 32px;
+    clip-path: inset(var(--inset-y) var(--inset-x) var(--inset-y) var(--inset-x) round var(--radius));
+    -webkit-clip-path: inset(var(--inset-y) var(--inset-x) var(--inset-y) var(--inset-x) round var(--radius));
+    will-change: clip-path;
+    transform: translateZ(0);
+    z-index: 2;
+  }
+  @media (max-width: 767px) {
+    .expand-frame {
+      --inset-y: 26vh;
+      --inset-x: 14vw;
+      --radius: 22px;
+    }
+  }
+  .expand-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.12) translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+  .expand-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(28,23,20,.1) 0%, rgba(28,23,20,.35) 40%, rgba(28,23,20,.85) 100%);
+    opacity: 0;
+    will-change: opacity;
+  }
+  .expand-content {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    will-change: opacity, transform;
+    transform: translateY(30px);
+  }
+
+  /* ─── HORIZONTAL PINNED SCROLL (Vitrine) ─── */
+  .h-scroll-section {
+    position: relative;
+  }
+  .h-scroll-pin {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding-top: 6vh;
+    padding-bottom: 5vh;
+  }
+  .h-scroll-header { flex: 0 0 auto; padding-bottom: 4vh; }
+  .h-scroll-viewport {
+    flex: 1 1 auto;
+    overflow: hidden;
+    width: 100%;
+  }
+  .h-scroll-track {
+    display: flex;
+    gap: 2.4vw;
+    padding: 0 6vw;
+    align-items: stretch;
+    height: 100%;
+    will-change: transform;
+  }
+  .h-scroll-card {
+    flex: 0 0 32vw;
+    min-width: 380px;
+    max-width: 460px;
+    display: flex;
+    flex-direction: column;
+  }
+  .h-scroll-card-cta { background: transparent; }
+  @media (max-width: 767px) {
+    .h-scroll-card { flex: 0 0 78vw; min-width: 0; max-width: 78vw; }
+    .h-scroll-track { gap: 4vw; padding: 0 8vw; }
+  }
+
+  /* ─── Pin-progress dots ─── */
+  .pin-dots {
+    position: absolute;
+    right: 2vw;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    z-index: 5;
+  }
+  .pin-dot {
+    width: 8px; height: 8px;
+    border-radius: 999px;
+    background: rgba(245,239,230,.25);
+    transition: background .4s ease, transform .4s ease;
+  }
+  .pin-dot.active {
+    background: var(--crust);
+    transform: scale(1.4);
+  }
+</style>
+</head>
+
+<body>
+
+<!-- Scroll progress bar -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Floating CTA (appears after hero) -->
+<div class="floating-cta" id="floatingCta">
+  <a href="tel:+4968944589" class="btn btn-crust">
+    <span class="live-dot"></span>
+    <span>Anrufen · (06894) 45 89</span>
+    <span class="arrow">→</span>
+  </a>
+</div>
+
+<!-- ─────────────────────────────── NAV ─────────────────────────────── -->
+<header id="nav" class="nav fixed top-0 inset-x-0 z-[90]">
+  <div class="max-w-[1500px] mx-auto px-6 md:px-10 h-16 md:h-20 flex items-center justify-between">
+    <a href="#top" class="flex items-baseline gap-3">
+      <span class="editorial text-[22px] md:text-[26px] tracking-tight">Weidmann</span>
+      <span class="label text-paper/60 hidden md:inline-block">Bäckerei · Konditorei · St. Ingbert</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-9">
+      <a class="nav-link label text-paper/80" href="#philosophie">§ 01 Philosophie</a>
+      <a class="nav-link label text-paper/80" href="#sortiment">§ 02 Sortiment</a>
+      <a class="nav-link label text-paper/80" href="#backstube">§ 03 Backstube</a>
+      <a class="nav-link label text-paper/80" href="#trennt">§ 04 Unterschied</a>
+      <a class="nav-link label text-paper/80" href="#kontakt">§ 06 Besuch</a>
+    </nav>
+    <div class="hidden md:flex items-center gap-4">
+      <span class="label text-paper/70 flex items-center gap-2"><span class="live-dot"></span><span id="navStatus">Heute geöffnet</span></span>
+      <a href="tel:+4968944589" class="btn btn-crust">
+        <span>Anrufen</span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+    <button id="menuBtn" class="md:hidden label text-paper">Menü</button>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="fixed inset-0 z-[100] bg-paper hidden">
+  <div class="px-6 h-16 flex items-center justify-between">
+    <span class="editorial text-[22px] text-ink">Weidmann</span>
+    <button id="menuClose" class="label text-ink">Schließen</button>
+  </div>
+  <div class="px-6 mt-12 flex flex-col gap-6">
+    <a href="#philosophie" class="display-2 text-[44px] text-ink block" onclick="document.getElementById('mobileMenu').classList.add('hidden')">§ 01 Philosophie</a>
+    <a href="#sortiment" class="display-2 text-[44px] text-ink block" onclick="document.getElementById('mobileMenu').classList.add('hidden')">§ 02 Sortiment</a>
+    <a href="#backstube" class="display-2 text-[44px] text-ink block" onclick="document.getElementById('mobileMenu').classList.add('hidden')">§ 03 Backstube</a>
+    <a href="#trennt" class="display-2 text-[44px] text-ink block" onclick="document.getElementById('mobileMenu').classList.add('hidden')">§ 04 Unterschied</a>
+    <a href="#kontakt" class="display-2 text-[44px] text-ink block" onclick="document.getElementById('mobileMenu').classList.add('hidden')">§ 06 Besuch</a>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- ─────────────────────────────── HERO ─────────────────────────────── -->
+<section id="hero" class="section-dark relative pt-24 md:pt-28 pb-12 md:pb-16 overflow-hidden">
+
+  <!-- Decorative wheat -->
+  <svg class="absolute -left-6 top-32 w-[150px] md:w-[200px] opacity-25 sway hidden md:block" viewBox="0 0 100 220" fill="none">
+    <path d="M50 220 L50 30" stroke="#C8772E" stroke-width="1.2"/>
+    <g stroke="#C8772E" stroke-width="1.1" fill="rgba(200,119,46,.18)">
+      <ellipse cx="50" cy="40"  rx="8" ry="14"/>
+      <ellipse cx="42" cy="60"  rx="7" ry="13" transform="rotate(-25 42 60)"/>
+      <ellipse cx="58" cy="60"  rx="7" ry="13" transform="rotate(25 58 60)"/>
+      <ellipse cx="40" cy="84"  rx="7" ry="13" transform="rotate(-25 40 84)"/>
+      <ellipse cx="60" cy="84"  rx="7" ry="13" transform="rotate(25 60 84)"/>
+      <ellipse cx="38" cy="108" rx="7" ry="13" transform="rotate(-25 38 108)"/>
+      <ellipse cx="62" cy="108" rx="7" ry="13" transform="rotate(25 62 108)"/>
+      <ellipse cx="40" cy="132" rx="7" ry="13" transform="rotate(-25 40 132)"/>
+      <ellipse cx="60" cy="132" rx="7" ry="13" transform="rotate(25 60 132)"/>
+    </g>
+  </svg>
+
+  <div class="max-w-[1500px] mx-auto px-6 md:px-10 relative z-10">
+
+    <!-- Top status -->
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-14 md:mb-20" data-reveal>
+      <div class="flex items-center flex-wrap gap-3">
+        <span class="pill pill-crust">✦ Feinschmecker · 2013 & 2017</span>
+        <span class="pill"><span class="live-dot"></span> Heute frisch ab 6.00</span>
+      </div>
+      <span class="label text-paper/60">III. Generation · seit drei Generationen</span>
+    </div>
+
+    <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+
+      <!-- Headline -->
+      <div class="md:col-span-7">
+        <p class="section-marker text-ink/70 mb-6 md:mb-8" data-reveal>
+          <span class="sec-num">§ 01</span>
+          <span>Die Feinschmecker-Bäckerei in St. Ingbert</span>
+        </p>
+
+        <h1 class="display text-[13vw] md:text-[7.6vw] lg:text-[112px] leading-[0.94]">
+          <span class="line-reveal" data-line><span>Brot, das</span></span><br/>
+          <span class="line-reveal" data-line><span><span class="italica text-crust">Geduld</span> braucht.</span></span>
+        </h1>
+
+        <div class="mt-7 md:mt-9 max-w-[500px] body-prose text-ink/75 text-[16px] md:text-[17px]" data-reveal>
+          Gesunde, natürliche Backwaren — traditi­onelle Haus­rezepte,
+          frische Zutaten, ohne Fertig­mischungen. Bäcker­meister
+          Franz‑Josef Weidmann und zwölf Fach­kräfte halten in St. Ingbert
+          ein altes Hand­werk am Leben.
+        </div>
+
+        <div class="mt-8 flex flex-wrap items-center gap-3" data-reveal>
+          <a href="tel:+4968944589" class="btn btn-crust">
+            <span>Jetzt vorbestellen</span>
+            <span class="arrow">→</span>
+          </a>
+          <a href="#sortiment" class="btn btn-ghost-dark">
+            <span>Sortiment ansehen</span>
+            <span class="arrow">↓</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero image: cinematic bakery oven -->
+      <div class="md:col-span-5 relative" data-reveal>
+        <div class="img-wrap arch-soft bg-card parallax-wrap" data-parallax="-10" style="aspect-ratio: 3.6/5; max-height: 80vh; min-height: 520px;">
+          <img
+            src="https://images.unsplash.com/photo-1568254183919-78a4f43a2877?w=1400&q=85&auto=format&fit=crop"
+            alt="Frisch gebackene Brotlaibe aus der Backstube"
+            class="w-full h-full object-cover"
+            data-img-scale
+            loading="eager" />
+          <!-- soft top gradient for atmosphere -->
+          <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(28,23,20,.25) 0%, transparent 40%, rgba(28,23,20,.4) 100%);"></div>
+        </div>
+
+        <!-- Heute frisch widget — ANCHORED to image -->
+        <div class="absolute -left-4 -bottom-12 md:-left-12 md:-bottom-14 card-dark p-5 w-[270px] md:w-[300px] z-10 parallax-wrap" data-parallax="40">
+          <div class="flex items-center justify-between mb-3">
+            <span class="label text-wheat flex items-center gap-2"><span class="live-dot"></span>Heute frisch</span>
+            <span class="label text-paper/50">06:42</span>
+          </div>
+          <ul class="space-y-2.5">
+            <li class="flex justify-between items-baseline border-b border-line pb-2">
+              <span class="editorial text-paper text-[15px]">Croissants mit Mandeln</span>
+              <span class="small text-paper/50">aus dem Ofen</span>
+            </li>
+            <li class="flex justify-between items-baseline border-b border-line pb-2">
+              <span class="editorial text-paper text-[15px]">Bauern­brot</span>
+              <span class="small text-paper/50">noch warm</span>
+            </li>
+            <li class="flex justify-between items-baseline">
+              <span class="editorial text-paper text-[15px]">Mohn‑Hörnchen</span>
+              <span class="small text-paper/50">ab 7.00</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Seal -->
+        <div class="absolute -right-3 -top-8 md:-right-10 md:-top-12 hidden sm:block z-10 seal-tilt parallax-wrap" data-parallax="-60">
+          <div class="seal w-[120px] h-[120px] md:w-[150px] md:h-[150px] rounded-full flex items-center justify-center text-center">
+            <div class="text-center leading-tight px-3">
+              <p class="text-[8.5px] tracking-[.22em] uppercase opacity-90 mb-1">Feinschmecker</p>
+              <p class="editorial text-[26px] md:text-[34px] leading-none" style="color:#f3e2b6;">2013</p>
+              <p class="text-[8.5px] tracking-[.22em] uppercase opacity-90 mt-1">& 2017</p>
+              <p class="text-[7.5px] tracking-[.18em] uppercase opacity-70 mt-1.5 italic">Eine der Besten</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Stats Row — own section right below hero, compact -->
+<section class="section-dark border-t border-line">
+  <div class="max-w-[1500px] mx-auto px-6 md:px-10">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-y-8 md:gap-x-10 border-b border-line py-10 md:py-12" data-reveal-stagger>
+      <div class="md:border-r md:border-line md:pr-10">
+        <p class="label text-wheat mb-3">Tradition</p>
+        <p class="stat-num text-[56px] md:text-[72px] text-ink">
+          <span class="counter" data-target="3">0</span><span class="italica text-crust">.</span>
+        </p>
+        <p class="small text-ink/55 mt-2">Generationen Hand­werk</p>
+      </div>
+      <div class="md:border-r md:border-line md:pr-10">
+        <p class="label text-wheat mb-3">Team</p>
+        <p class="stat-num text-[56px] md:text-[72px] text-ink">
+          <span class="counter" data-target="12">0</span>
+        </p>
+        <p class="small text-ink/55 mt-2">Qualifizierte Fach­kräfte</p>
+      </div>
+      <div class="md:border-r md:border-line md:pr-10">
+        <p class="label text-wheat mb-3">Auszeichnung</p>
+        <p class="stat-num text-[56px] md:text-[72px] text-ink">
+          <span class="counter" data-target="2">0</span><span class="italica text-crust text-[36px] md:text-[48px]">× F</span>
+        </p>
+        <p class="small text-ink/55 mt-2">Feinschmecker '13 & '17</p>
+      </div>
+      <div>
+        <p class="label text-wheat mb-3">Backstube</p>
+        <p class="stat-num text-[56px] md:text-[72px] text-ink">
+          <span class="counter" data-target="06">0</span><span class="italica text-crust text-[36px] md:text-[48px]">.00</span>
+        </p>
+        <p class="small text-ink/55 mt-2">Frische ab Sonnen­aufgang</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────── PRESS BAR (cream) ─────────────────────────────── -->
+<section class="section-cream border-y border-lineDark py-8">
+  <div class="max-w-[1500px] mx-auto px-6 md:px-10 grid md:grid-cols-12 gap-8 items-center" data-reveal>
+    <p class="md:col-span-2 label text-ink/70">Bekannt aus</p>
+    <div class="md:col-span-10 flex flex-wrap items-center gap-x-10 gap-y-3 text-ink">
+      <span class="editorial text-[24px] md:text-[26px]">Der Feinschmecker</span>
+      <span class="text-ink/25">·</span>
+      <span class="italica text-[26px] md:text-[28px]">Saarbrücker Zeitung</span>
+      <span class="text-ink/25">·</span>
+      <span class="editorial text-[24px] md:text-[26px]">saarnews</span>
+      <span class="text-ink/25">·</span>
+      <span class="italica text-[26px] md:text-[28px]">Saar­ländischer Rundfunk</span>
+      <span class="text-ink/25">·</span>
+      <span class="editorial text-[24px] md:text-[26px]">Pfälzischer Merkur</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────── MARQUEE (cream) ─────────────────────────────── -->
+<section class="marquee py-7 section-cream border-b border-lineDark">
+  <div class="marquee-track text-ink">
+    <div class="flex gap-16 items-center">
+      <span class="display-2 text-[44px] md:text-[58px]">Petit Fours</span>
+      <span class="dot"></span>
+      <span class="display-2 text-[44px] md:text-[58px] italica">Croissants mit Mandeln</span>
+      <span class="dot"></span>
+      <span class="display-2 text-[44px] md:text-[58px]">Brotlaibe</span>
+      <span class="dot"></span>
+      <span class="display-2 text-[44px] md:text-[58px] italica">Mohn‑Hörnchen</span>
+      <span class="dot"></span>
+      <span class="display-2 text-[44px] md:text-[58px]">Bananentorte</span>
+      <span class="dot"></span>
+      <span class="display-2 text-[44px] md:text-[58px] italica">Kaffeeteilchen</span>
+      <span class="dot"></span>
+      <span class="display-2 text-[44px] md:text-[58px]">Brötchen</span>
+      <span class="dot"></span>
+    </div>
+    <div class="flex gap-16 items-center" aria-hidden="true">
+      <span class="display-2 text-[44px] md:text-[58px]">Petit Fours</span>
+      <span class="dot"></span>
+      <span class="display-2 text-[44px] md:text-[58px] italica">Croissants mit Mandeln</span>
+      <span class="dot"></span>
+      <span class="display-2 text-[44px] md:text-[58px]">Brotlaibe</span>
+      <span class="dot"></span>
+      <span class="display-2 text-[44px] md:text-[58px] italica">Mohn‑Hörnchen</span>
+      <span class="dot"></span>
+      <span class="display-2 text-[44px] md:text-[58px]">Bananentorte</span>
+      <span class="dot"></span>
+      <span class="display-2 text-[44px] md:text-[58px] italica">Kaffeeteilchen</span>
+      <span class="dot"></span>
+      <span class="display-2 text-[44px] md:text-[58px]">Brötchen</span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────── § 01  PHILOSOPHIE (dark) ─────────────────────────────── -->
+<section id="philosophie" class="section-dark py-28 md:py-40 relative overflow-hidden">
+  <div class="crust-glow w-[500px] h-[500px] bg-crust top-[30%] -left-[15%]"></div>
+
+  <div class="max-w-[1500px] mx-auto px-6 md:px-10 relative">
+
+    <div class="grid md:grid-cols-12 gap-10 mb-20 md:mb-28">
+      <div class="md:col-span-7" data-reveal>
+        <p class="section-marker text-paper/70 mb-8">
+          <span class="sec-num">§ 02</span>
+          <span>Philosophie</span>
+        </p>
+        <h2 class="display text-[52px] md:text-[100px] leading-[0.9] text-paper">
+          Vier <span class="italica text-crust">Säulen</span>,<br/>ein Hand­werk.
+        </h2>
+      </div>
+      <div class="md:col-span-5 self-end" data-reveal>
+        <p class="body-prose text-[18px] md:text-[20px] leading-relaxed text-paper/75">
+          Größten Wert legen wir auf eine Qualität, die sich nicht verändert –
+          nicht morgens um sechs, nicht um sechs Uhr abends. Vier Grund­sätze
+          tragen alles, was bei Weidmann das Haus verlässt.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6" data-reveal-stagger>
+
+      <!-- Pillar 01: Hausrezepte → image of dough/baker hands -->
+      <article class="pillar-card card-dark rounded-md overflow-hidden flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=900&q=85&auto=format&fit=crop"
+               alt="Teig wird von Hand geknetet" class="pillar-img w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="p-6 md:p-7 flex-1 flex flex-col">
+          <div class="flex items-center justify-between mb-5">
+            <span class="figure-num text-[46px] text-crust">01</span>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C8772E" stroke-width="1.2">
+              <path d="M8 13V6.5a1.5 1.5 0 1 1 3 0V12"/>
+              <path d="M11 12V4.5a1.5 1.5 0 1 1 3 0V12"/>
+              <path d="M14 11V5.5a1.5 1.5 0 1 1 3 0V14"/>
+              <path d="M17 12.5a1.5 1.5 0 0 1 3 0V16a6 6 0 0 1-6 6h-2a6 6 0 0 1-5.74-4.27L5 14.5a1.5 1.5 0 0 1 2.84-.96L8 14"/>
+            </svg>
+          </div>
+          <h3 class="editorial text-[22px] text-paper mb-2">Haus­rezepte statt Fertig­mischungen</h3>
+          <p class="small text-paper/60 leading-relaxed flex-1">
+            Was Generationen erprobt haben, lassen wir uns nicht aus der Hand nehmen.
+          </p>
+          <div class="mt-5 pt-4 border-t border-line flex items-center justify-between">
+            <span class="label text-paper/50">Generationen­wissen</span>
+            <span class="label text-crust">✓</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Pillar 02: Frische Zutaten → image of bread/grain -->
+      <article class="pillar-card card-dark rounded-md overflow-hidden flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=900&q=85&auto=format&fit=crop"
+               alt="Frisches Sauerteigbrot mit Mehl" class="pillar-img w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="p-6 md:p-7 flex-1 flex flex-col">
+          <div class="flex items-center justify-between mb-5">
+            <span class="figure-num text-[46px] text-crust">02</span>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C8772E" stroke-width="1.2">
+              <path d="M11 20A7 7 0 0 1 4 13c0-5 4-9 16-9 0 12-4 16-9 16Z"/>
+              <path d="M2 22 6 18"/>
+            </svg>
+          </div>
+          <h3 class="editorial text-[22px] text-paper mb-2">Frische Zutaten statt Konserven</h3>
+          <p class="small text-paper/60 leading-relaxed flex-1">
+            Kurze Wege, saison­abhängig, in über­schaubaren Mengen.
+          </p>
+          <div class="mt-5 pt-4 border-t border-line flex items-center justify-between">
+            <span class="label text-paper/50">Regionale Quellen</span>
+            <span class="label text-crust">✓</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Pillar 03: Backen als Handwerk → baker portrait/hands -->
+      <article class="pillar-card card-dark rounded-md overflow-hidden flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?w=900&q=85&auto=format&fit=crop"
+               alt="Bäcker bei der Arbeit" class="pillar-img w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="p-6 md:p-7 flex-1 flex flex-col">
+          <div class="flex items-center justify-between mb-5">
+            <span class="figure-num text-[46px] text-crust">03</span>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C8772E" stroke-width="1.2">
+              <rect x="2" y="9" width="20" height="6" rx="3"/>
+              <path d="M2 12h-1M22 12h1"/>
+              <path d="M6 9V7m12 2V7M6 17v-2m12 2v-2"/>
+            </svg>
+          </div>
+          <h3 class="editorial text-[22px] text-paper mb-2">Backen als Hand­werk</h3>
+          <p class="small text-paper/60 leading-relaxed flex-1">
+            Sorgfältig, kompetent, geduldig — entscheiden tut der Bäcker.
+          </p>
+          <div class="mt-5 pt-4 border-t border-line flex items-center justify-between">
+            <span class="label text-paper/50">Meister­betrieb</span>
+            <span class="label text-crust">✓</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Pillar 04: Qualität → award/cake closeup -->
+      <article class="pillar-card card-dark rounded-md overflow-hidden flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=900&q=85&auto=format&fit=crop"
+               alt="Konditorei-Qualität" class="pillar-img w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="p-6 md:p-7 flex-1 flex flex-col">
+          <div class="flex items-center justify-between mb-5">
+            <span class="figure-num text-[46px] text-crust">04</span>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C8772E" stroke-width="1.2">
+              <circle cx="12" cy="9" r="6"/>
+              <path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/>
+            </svg>
+          </div>
+          <h3 class="editorial text-[22px] text-paper mb-2">Qualität als höchster Anspruch</h3>
+          <p class="small text-paper/60 leading-relaxed flex-1">
+            Zwei­fach Feinschmecker (2013 & 2017) — Aufgabe, nicht Privileg.
+          </p>
+          <div class="mt-5 pt-4 border-t border-line flex items-center justify-between">
+            <span class="label text-paper/50">2× Auszeichnung</span>
+            <span class="label text-crust">✓</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────── § 03  SORTIMENT (cream) ─────────────────────────────── -->
+<section id="sortiment" class="section-cream py-28 md:py-40">
+
+  <div class="max-w-[1500px] mx-auto px-6 md:px-10 mb-20 md:mb-28">
+    <div class="grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-7" data-reveal>
+        <p class="section-marker text-ink/70 mb-8">
+          <span class="sec-num">§ 03</span>
+          <span>Sortiment</span>
+        </p>
+        <h2 class="display text-[64px] md:text-[130px] leading-[0.9] text-ink">
+          Aus der<br/><span class="italica text-crust-deep">Backstube.</span>
+        </h2>
+      </div>
+      <div class="md:col-span-5 self-end" data-reveal>
+        <p class="body-prose text-[18px] md:text-[20px] leading-relaxed text-ink/75">
+          Eine Auswahl dessen, was uns am meisten am Herzen liegt.
+          Vieles entsteht in den frühen Morgen­stunden, manches
+          nur an bestimmten Tagen, alles in über­schau­barer Menge.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-2">
+          <span class="pill pill-light">Hand­gemacht</span>
+          <span class="pill pill-light">Vor­bestellung möglich</span>
+          <span class="pill pill-light">Sonder­anfertigung</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPREAD 01 — PETIT FOURS -->
+  <article class="max-w-[1500px] mx-auto px-6 md:px-10 mb-32 md:mb-40">
+    <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+      <div class="md:col-span-7 order-2 md:order-1 relative" data-reveal>
+        <div class="img-wrap aspect-[5/4] bg-cardLight parallax-wrap" data-parallax="-30">
+          <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=1600&q=85&auto=format&fit=crop"
+               alt="Petit Fours der Konditorei Weidmann" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 stamp light hidden sm:block">
+          ab 2,80 €<br/><span class="italica">je Stück</span>
+        </div>
+      </div>
+      <div class="md:col-span-4 md:col-start-9 order-1 md:order-2" data-reveal>
+        <p class="label text-ink/60 mb-4">№ I · Konditorei</p>
+        <h3 class="display-2 text-[56px] md:text-[88px] leading-[0.88] mb-6 text-ink">
+          Petit<br/><span class="italica text-crust-deep">Fours.</span>
+        </h3>
+        <p class="body-prose mb-7 text-ink/75">
+          Kleine Etagen Eleganz: dünn auf­gezogene Schichten,
+          ganz­heitlich gedacht, mit der Hand glasiert. Das Stück
+          Konditorei, das den Tisch sofort feierlicher macht.
+        </p>
+        <ul class="space-y-2.5 mb-7">
+          <li class="flex justify-between border-b border-lineDark pb-2">
+            <span class="small text-ink/55">Sortiment</span>
+            <span class="editorial text-ink text-[15px]">6 Variationen</span>
+          </li>
+          <li class="flex justify-between border-b border-lineDark pb-2">
+            <span class="small text-ink/55">Mindest­abnahme</span>
+            <span class="editorial text-ink text-[15px]">12 Stück</span>
+          </li>
+          <li class="flex justify-between">
+            <span class="small text-ink/55">Vorlauf</span>
+            <span class="editorial text-ink text-[15px]">2 Tage</span>
+          </li>
+        </ul>
+        <a href="tel:+4968944589" class="btn btn-cream w-full justify-center">
+          <span>Vorbestellung</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <!-- SPREAD 02 — CROISSANTS MIT MANDELN -->
+  <article class="max-w-[1500px] mx-auto px-6 md:px-10 mb-32 md:mb-40">
+    <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+      <div class="md:col-span-4" data-reveal>
+        <p class="label text-ink/60 mb-4">№ II · Frühstück</p>
+        <h3 class="display-2 text-[56px] md:text-[88px] leading-[0.88] mb-6 text-ink">
+          Croissants<br/><span class="italica text-crust-deep">mit Mandeln.</span>
+        </h3>
+        <p class="body-prose mb-7 text-ink/75">
+          Lamination in vielen Lagen, gerollt am Vorabend,
+          über Nacht gereift, am Morgen mit gerösteten
+          Mandeln aus dem Ofen. Außen Splitter, innen Luft.
+        </p>
+        <div class="space-y-3 mb-7">
+          <div class="flex items-center gap-4 pl-3 border-l-2 border-crustDeep">
+            <span class="label text-ink/55 w-32">Butter­anteil</span>
+            <span class="editorial text-ink text-[16px]">28 %</span>
+          </div>
+          <div class="flex items-center gap-4 pl-3 border-l-2 border-crustDeep">
+            <span class="label text-ink/55 w-32">Lagen</span>
+            <span class="editorial text-ink text-[16px]">27</span>
+          </div>
+          <div class="flex items-center gap-4 pl-3 border-l-2 border-crustDeep">
+            <span class="label text-ink/55 w-32">Reife­zeit</span>
+            <span class="editorial text-ink text-[16px]">Über Nacht</span>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="pill pill-light pill-crust">Hausspezialität</span>
+          <span class="pill pill-light"><span class="live-dot"></span> Heute frisch</span>
+        </div>
+      </div>
+      <div class="md:col-span-7 md:col-start-6 relative" data-reveal>
+        <div class="img-wrap aspect-[5/4] bg-cardLight parallax-wrap" data-parallax="-40">
+          <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1600&q=85&auto=format&fit=crop"
+               alt="Croissants mit gerösteten Mandeln" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="absolute -top-5 -right-4 md:-top-7 md:-right-7 stamp light hidden sm:block">
+          1,90 €<br/>je Stück
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- SPREAD 03 — BROTLAIBE -->
+  <article class="max-w-[1500px] mx-auto px-6 md:px-10 mb-32 md:mb-40">
+    <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+      <div class="md:col-span-7 order-2 md:order-1 relative" data-reveal>
+        <div class="img-wrap aspect-[5/4] bg-cardLight parallax-wrap" data-parallax="-35">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1600&q=85&auto=format&fit=crop"
+               alt="Brotlaibe der Bäckerei Weidmann" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="absolute -bottom-5 -right-4 md:-bottom-7 md:-right-7 stamp light hidden sm:block" style="transform: rotate(6deg);">
+          ab 4,50 €<br/>500g · 1kg
+        </div>
+      </div>
+      <div class="md:col-span-4 md:col-start-9 order-1 md:order-2" data-reveal>
+        <p class="label text-ink/60 mb-4">№ III · Brot</p>
+        <h3 class="display-2 text-[56px] md:text-[88px] leading-[0.88] mb-6 text-ink">
+          Brot<span class="italica text-crust-deep">laibe.</span>
+        </h3>
+        <p class="body-prose mb-7 text-ink/75">
+          Lange Teigführung, ehrliches Mehl, Wasser, Salz, Hand­werk.
+          Brote, die einen Tag später besser schmecken
+          als am Tag der Lieferung – das ist der Sinn der Sache.
+        </p>
+        <ul class="space-y-2.5 mb-7">
+          <li class="flex justify-between border-b border-lineDark pb-2">
+            <span class="small text-ink/55">Bauern­brot</span>
+            <span class="editorial text-ink text-[15px]">tägl.</span>
+          </li>
+          <li class="flex justify-between border-b border-lineDark pb-2">
+            <span class="small text-ink/55">Roggen­vollkorn</span>
+            <span class="editorial text-ink text-[15px]">Di, Do, Sa</span>
+          </li>
+          <li class="flex justify-between border-b border-lineDark pb-2">
+            <span class="small text-ink/55">Saaten­mix</span>
+            <span class="editorial text-ink text-[15px]">Mi, Fr, Sa</span>
+          </li>
+          <li class="flex justify-between">
+            <span class="small text-ink/55">Auf Vorbestellung</span>
+            <span class="editorial text-ink text-[15px]">jeden Tag</span>
+          </li>
+        </ul>
+        <a href="tel:+4968944589" class="btn btn-cream w-full justify-center">
+          <span>Brot reservieren</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <!-- SPREAD 04 — BANANENTORTE -->
+  <article class="max-w-[1500px] mx-auto px-6 md:px-10 mb-24">
+    <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+      <div class="md:col-span-4" data-reveal>
+        <p class="label text-ink/60 mb-4">№ IV · Klassiker</p>
+        <h3 class="display-2 text-[56px] md:text-[88px] leading-[0.88] mb-6 text-ink">
+          Bananen<span class="italica text-crust-deep">torte.</span>
+        </h3>
+        <p class="body-prose mb-7 text-ink/75">
+          Ein Haus­klassiker mit Anhänger­schaft. Sahnig, leise süß,
+          mit der Frucht­frische, die nur eine Konditorei mit ruhiger
+          Hand hin­bekommt.
+        </p>
+        <div class="card-cream p-5 mb-7">
+          <p class="stars mb-2">★★★★★</p>
+          <p class="italica text-[18px] leading-snug text-ink">
+            "Wie früher bei Oma – nur besser."
+          </p>
+          <p class="small text-ink/55 mt-2">— Stamm­kundin, seit 18 Jahren</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="pill pill-light pill-crust">Stamm­kunden­liebling</span>
+          <span class="pill pill-light">Ganze Torte: ab 38 €</span>
+        </div>
+      </div>
+      <div class="md:col-span-7 md:col-start-6 relative" data-reveal>
+        <div class="img-wrap aspect-[5/4] bg-cardLight parallax-wrap" data-parallax="-45">
+          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=1600&q=85&auto=format&fit=crop"
+               alt="Bananentorte als Hausklassiker" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="absolute -top-5 -left-4 md:-top-7 md:-left-7 stamp light hidden sm:block" style="transform: rotate(-8deg);">
+          ab 3,20 €<br/>je Stück
+        </div>
+      </div>
+    </div>
+  </article>
+
+</section>
+
+
+<!-- ─────────────────────────────── DIE VITRINE · HORIZONTAL PINNED SCROLL ─────────────────────────────── -->
+<section class="h-scroll-section section-cream" id="hScrollSection">
+  <div class="h-scroll-pin">
+    <div class="h-scroll-header max-w-[1500px] mx-auto w-full px-6 md:px-10 flex items-end justify-between flex-wrap gap-4">
+      <div>
+        <p class="section-marker text-ink/70 mb-3">
+          <span class="sec-num">§ 03 ½</span>
+          <span>Die Vitrine</span>
+        </p>
+        <h3 class="display-2 text-[36px] md:text-[80px] text-ink leading-[0.9]">
+          Mehr aus der <span class="italica text-crust-deep">Vitrine.</span>
+        </h3>
+      </div>
+      <div class="text-right">
+        <p class="label text-ink/60 mb-2">Scrollen → horizontal</p>
+        <div class="flex items-center gap-2 justify-end">
+          <span class="w-12 h-px bg-ink/40"></span>
+          <span class="label text-crust-deep">→</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-scroll-viewport">
+      <div class="h-scroll-track" id="hScrollTrack">
+
+        <article class="h-scroll-card">
+          <div class="img-wrap aspect-[4/5] bg-cardLight mb-4 relative">
+            <img src="https://images.unsplash.com/photo-1606101206334-9a9e4e0b6e8d?w=1100&q=85&auto=format&fit=crop"
+                 alt="Mohn-Hörnchen" class="w-full h-full object-cover" loading="lazy" />
+            <span class="absolute top-3 left-3 pill pill-light pill-crust">Frisch</span>
+          </div>
+          <div class="flex justify-between items-baseline">
+            <div>
+              <span class="editorial text-[24px] text-ink block">Mohn‑Hörnchen</span>
+              <span class="small text-ink/55">Mohn ganz fein gemahlen</span>
+            </div>
+            <span class="editorial text-crust-deep text-[20px]">1,20 €</span>
+          </div>
+        </article>
+
+        <article class="h-scroll-card">
+          <div class="img-wrap aspect-[4/5] bg-cardLight mb-4 relative">
+            <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=1100&q=85&auto=format&fit=crop"
+                 alt="Kaffeeteilchen" class="w-full h-full object-cover" loading="lazy" />
+            <span class="absolute top-3 left-3 pill pill-light">Ab 7.00</span>
+          </div>
+          <div class="flex justify-between items-baseline">
+            <div>
+              <span class="editorial text-[24px] text-ink block">Kaffeeteilchen</span>
+              <span class="small text-ink/55">Plunder mit Vanille­creme</span>
+            </div>
+            <span class="editorial text-crust-deep text-[20px]">2,40 €</span>
+          </div>
+        </article>
+
+        <article class="h-scroll-card">
+          <div class="img-wrap aspect-[4/5] bg-cardLight mb-4 relative">
+            <img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=1100&q=85&auto=format&fit=crop"
+                 alt="Brötchen, sortiert" class="w-full h-full object-cover" loading="lazy" />
+            <span class="absolute top-3 left-3 pill pill-light"><span class="live-dot"></span> Täglich</span>
+          </div>
+          <div class="flex justify-between items-baseline">
+            <div>
+              <span class="editorial text-[24px] text-ink block">Brötchen, sortiert</span>
+              <span class="small text-ink/55">8 Sorten · auch glutenarm</span>
+            </div>
+            <span class="editorial text-crust-deep text-[20px]">ab 0,55 €</span>
+          </div>
+        </article>
+
+        <article class="h-scroll-card">
+          <div class="img-wrap aspect-[4/5] bg-cardLight mb-4 relative">
+            <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=1100&q=85&auto=format&fit=crop"
+                 alt="Roggenvollkornbrot" class="w-full h-full object-cover" loading="lazy"
+                 onerror="this.src='https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1100&q=85&auto=format&fit=crop'" />
+            <span class="absolute top-3 left-3 pill">Di · Do · Sa</span>
+          </div>
+          <div class="flex justify-between items-baseline">
+            <div>
+              <span class="editorial text-[24px] text-ink block">Roggen­vollkorn</span>
+              <span class="small text-ink/55">Lange Sauerteig­führung</span>
+            </div>
+            <span class="editorial text-crust-deep text-[20px]">5,80 €</span>
+          </div>
+        </article>
+
+        <article class="h-scroll-card">
+          <div class="img-wrap aspect-[4/5] bg-cardLight mb-4 relative">
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=1100&q=85&auto=format&fit=crop"
+                 alt="Sonntagsstück aus der Konditorei" class="w-full h-full object-cover" loading="lazy"
+                 onerror="this.src='https://images.unsplash.com/photo-1488477181946-6428a0291777?w=1100&q=85&auto=format&fit=crop'" />
+            <span class="absolute top-3 left-3 pill pill-crust">Konditorei</span>
+          </div>
+          <div class="flex justify-between items-baseline">
+            <div>
+              <span class="editorial text-[24px] text-ink block">Sonntags­stück</span>
+              <span class="small text-ink/55">Wechselnde Auswahl</span>
+            </div>
+            <span class="editorial text-crust-deep text-[20px]">3,40 €</span>
+          </div>
+        </article>
+
+        <article class="h-scroll-card">
+          <div class="img-wrap aspect-[4/5] bg-cardLight mb-4 relative">
+            <img src="https://images.unsplash.com/photo-1568254183919-78a4f43a2877?w=1100&q=85&auto=format&fit=crop"
+                 alt="Laugengebäck" class="w-full h-full object-cover" loading="lazy"
+                 onerror="this.src='https://images.unsplash.com/photo-1586201375761-83865001e31c?w=1100&q=85&auto=format&fit=crop'" />
+            <span class="absolute top-3 left-3 pill"><span class="live-dot"></span> Täglich</span>
+          </div>
+          <div class="flex justify-between items-baseline">
+            <div>
+              <span class="editorial text-[24px] text-ink block">Laugen­gebäck</span>
+              <span class="small text-ink/55">Brezel & Stange nach Hausart</span>
+            </div>
+            <span class="editorial text-crust-deep text-[20px]">1,40 €</span>
+          </div>
+        </article>
+
+        <article class="h-scroll-card h-scroll-card-cta">
+          <div class="card-cream p-8 md:p-10 aspect-[4/5] flex flex-col justify-between">
+            <div>
+              <p class="label text-ink/60 mb-4">Sonder­anfertigung</p>
+              <h4 class="display-2 text-[40px] md:text-[52px] leading-[0.92] text-ink">
+                Etwas <span class="italica text-crust-deep">Eigenes?</span>
+              </h4>
+              <p class="body-prose text-ink/70 mt-4">
+                Anlass, Wunsch, Vorlauf – wir besprechen das in Ruhe.
+                Ein Anruf reicht.
+              </p>
+            </div>
+            <a href="tel:+4968944589" class="btn mt-6 justify-center" style="background: var(--bg); color: var(--paper);">
+              <span>(06894) 45 89</span>
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────── § 04  BACKSTUBE (dark) ─────────────────────────────── -->
+<section id="backstube" class="section-dark py-28 md:py-40 relative overflow-hidden">
+  <div class="crust-glow w-[500px] h-[500px] bg-crust top-[20%] right-[10%]"></div>
+
+  <div class="max-w-[1500px] mx-auto px-6 md:px-10 relative">
+
+    <div class="grid md:grid-cols-12 gap-10 mb-20 md:mb-28">
+      <div class="md:col-span-7" data-reveal>
+        <p class="section-marker text-paper/70 mb-8">
+          <span class="sec-num">§ 04</span>
+          <span>Unsere Backstube</span>
+        </p>
+        <h2 class="display text-[64px] md:text-[130px] leading-[0.9] text-paper">
+          Drei<br/><span class="italica text-crust">Generationen.</span>
+        </h2>
+      </div>
+      <div class="md:col-span-5 self-end" data-reveal>
+        <p class="body-prose text-[18px] md:text-[20px] leading-relaxed text-paper/75">
+          In der Josef­staler Straße backen wir seit drei Generationen.
+          Heute leitet Bäcker­meister und Konditor
+          <em class="italica text-wheat">Franz‑Josef Weidmann</em> einen Betrieb mit
+          zwölf qualifi­zierten Fach­kräften – über­wiegend selbst aus­gebildet.
+        </p>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="mb-24 md:mb-32" data-reveal>
+      <p class="label text-wheat mb-10">Zeitlinie · drei Generationen</p>
+      <div class="timeline-rail relative grid grid-cols-2 md:grid-cols-5 gap-y-12 gap-x-4">
+
+        <div class="text-center">
+          <div class="flex justify-center mb-6">
+            <span class="w-3 h-3 rounded-full bg-crust relative z-10 ring-4 ring-bg"></span>
+          </div>
+          <p class="figure-num text-[32px] md:text-[44px] text-paper">I.</p>
+          <p class="editorial text-[18px] mt-1 text-paper">Gründung</p>
+          <p class="small text-paper/50 mt-1">Erste Generation</p>
+        </div>
+
+        <div class="text-center">
+          <div class="flex justify-center mb-6">
+            <span class="w-3 h-3 rounded-full bg-crust relative z-10 ring-4 ring-bg"></span>
+          </div>
+          <p class="figure-num text-[32px] md:text-[44px] text-paper">II.</p>
+          <p class="editorial text-[18px] mt-1 text-paper">Übernahme</p>
+          <p class="small text-paper/50 mt-1">Zweite Generation</p>
+        </div>
+
+        <div class="text-center">
+          <div class="flex justify-center mb-6">
+            <span class="w-4 h-4 rounded-full bg-crust relative z-10 ring-4 ring-bg"></span>
+          </div>
+          <p class="figure-num text-[32px] md:text-[44px] text-paper">2013</p>
+          <p class="editorial text-[18px] mt-1 text-paper">Feinschmecker</p>
+          <p class="small text-paper/50 mt-1">Erste Auszeichnung</p>
+        </div>
+
+        <div class="text-center">
+          <div class="flex justify-center mb-6">
+            <span class="w-4 h-4 rounded-full bg-crust relative z-10 ring-4 ring-bg"></span>
+          </div>
+          <p class="figure-num text-[32px] md:text-[44px] text-paper">2017</p>
+          <p class="editorial text-[18px] mt-1 text-paper">Feinschmecker</p>
+          <p class="small text-paper/50 mt-1">Erneute Auszeichnung</p>
+        </div>
+
+        <div class="text-center col-span-2 md:col-span-1">
+          <div class="flex justify-center mb-6">
+            <span class="w-3 h-3 rounded-full bg-paper relative z-10 ring-4 ring-bg"></span>
+          </div>
+          <p class="figure-num text-[32px] md:text-[44px] text-paper">Heute</p>
+          <p class="editorial text-[18px] mt-1 text-paper">III. Generation</p>
+          <p class="small text-paper/50 mt-1">F.‑J. Weidmann & Team</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Portrait + stats (sticky layout) -->
+    <div class="grid md:grid-cols-12 gap-10 items-start">
+      <div class="md:col-span-6 relative" data-reveal>
+       <div class="sticky-portrait">
+        <div class="img-wrap aspect-[4/5] bg-card relative parallax-wrap" data-parallax="-25">
+          <img src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?w=1400&q=85&auto=format&fit=crop"
+               alt="Franz-Josef und Claudia Weidmann in der Backstube"
+               class="w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-x-0 bottom-0 p-4 md:p-6" style="background: linear-gradient(180deg, transparent 0%, rgba(28,23,20,.85) 100%);">
+            <p class="label text-wheat mb-1">Bildunter­schrift</p>
+            <p class="editorial text-[16px] leading-tight text-paper">
+              Franz‑Josef und Claudia Weidmann in ihrer Bäckerei.
+              <span class="italica text-paper/60">Foto · Cornelia Jung / SZ</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="absolute -right-4 -bottom-12 md:-right-10 md:-bottom-14 card-dark p-6 max-w-[300px] hidden md:block">
+          <span class="quote-mark block leading-none -mb-4">"</span>
+          <p class="italica text-[20px] leading-snug text-paper mt-2">
+            Wer Brot backt, gibt Zeit weiter. Das ist kein Beruf, das ist eine Haltung.
+          </p>
+          <p class="label text-wheat mt-4">— F.‑J. Weidmann</p>
+        </div>
+       </div>
+      </div>
+
+      <div class="md:col-span-5 md:col-start-8" data-reveal-stagger>
+        <div class="border-t border-line pt-8 mb-10">
+          <p class="label text-wheat mb-3">Drei Generationen</p>
+          <p class="figure-num text-[120px] md:text-[160px] text-paper">III.</p>
+          <p class="body-prose mt-3 max-w-[360px] text-paper/70">
+            Familien­geführt, in dritter Generation. Werte, Rezepte und
+            Sortiment werden hier nicht erfunden – sie werden weiter­gegeben.
+          </p>
+        </div>
+
+        <div class="border-t border-line pt-8 mb-10">
+          <p class="label text-wheat mb-3">Team</p>
+          <p class="figure-num text-[120px] md:text-[160px] text-paper">12</p>
+          <p class="body-prose mt-3 max-w-[360px] text-paper/70">
+            Qualifi­zierte Fach­kräfte unter der Leitung von Bäcker­meister
+            Franz‑Josef Weidmann – über­wiegend im eigenen Haus aus­gebildet.
+          </p>
+        </div>
+
+        <div class="border-t border-line pt-8">
+          <p class="label text-wheat mb-3">Auszeichnung</p>
+          <p class="figure-num text-[120px] md:text-[160px] text-paper">2× <span class="italica text-crust">F</span></p>
+          <p class="body-prose mt-3 max-w-[360px] text-paper/70">
+            Vom <em>Feinschmecker</em> in den Jahren 2013 und 2017 als
+            eine der besten Bäckereien Deutsch­lands ausgezeichnet.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────── § 05  WAS UNS TRENNT (cream) ─────────────────────────────── -->
+<section id="trennt" class="section-cream py-28 md:py-40 relative overflow-hidden">
+
+  <div class="absolute -right-10 -bottom-10 pointer-events-none select-none opacity-[.18]">
+    <p class="ghost-num text-[40vw] md:text-[24vw] leading-none">vs.</p>
+  </div>
+
+  <div class="relative max-w-[1500px] mx-auto px-6 md:px-10">
+
+    <div class="grid md:grid-cols-12 gap-10 mb-16 md:mb-20">
+      <div class="md:col-span-7" data-reveal>
+        <p class="section-marker text-ink/70 mb-8">
+          <span class="sec-num">§ 05</span>
+          <span>Der Unterschied</span>
+        </p>
+        <h2 class="display text-[52px] md:text-[120px] leading-[0.9] text-ink">
+          Warum<br/>Weidmann <span class="italica text-crust-deep">anders</span><br/>schmeckt.
+        </h2>
+      </div>
+      <div class="md:col-span-4 md:col-start-9 self-end" data-reveal>
+        <p class="body-prose text-[18px] leading-relaxed text-ink/75">
+          Es gibt einen Grund, warum Brot von hier sich nicht so anfühlt wie
+          Brot von dort. Drei Generationen Hand­werk gegen Industrie­logik —
+          Position für Position.
+        </p>
+      </div>
+    </div>
+
+    <div class="card-cream overflow-hidden" data-reveal>
+
+      <!-- Header row -->
+      <div class="grid grid-cols-[1fr,120px,120px] md:grid-cols-[1.5fr,1fr,1fr] gap-4 md:gap-8 p-5 md:p-7 border-b border-lineDark">
+        <span class="label text-ink/60">Kriterium</span>
+        <span class="label text-ink/60 text-center">Weidmann</span>
+        <span class="label text-ink/60 text-center">Industrie</span>
+      </div>
+
+      <div>
+        <div class="grid grid-cols-[1fr,120px,120px] md:grid-cols-[1.5fr,1fr,1fr] gap-4 md:gap-8 p-5 md:p-7 items-center border-b border-lineDark">
+          <div>
+            <p class="editorial text-[20px] md:text-[26px] text-ink">Teig­führung</p>
+            <p class="small text-ink/55 mt-1">Zeit als Zutat</p>
+          </div>
+          <div class="flex flex-col items-center gap-1.5">
+            <span class="check">✓</span>
+            <span class="small text-ink/60 text-center">Lange Reife</span>
+          </div>
+          <div class="flex flex-col items-center gap-1.5">
+            <span class="cross">×</span>
+            <span class="small text-ink/40 text-center">Beschleunigt</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-[1fr,120px,120px] md:grid-cols-[1.5fr,1fr,1fr] gap-4 md:gap-8 p-5 md:p-7 items-center border-b border-lineDark">
+          <div>
+            <p class="editorial text-[20px] md:text-[26px] text-ink">Zutaten</p>
+            <p class="small text-ink/55 mt-1">Frisch oder konserviert</p>
+          </div>
+          <div class="flex flex-col items-center gap-1.5">
+            <span class="check">✓</span>
+            <span class="small text-ink/60 text-center">Frisch & saisonal</span>
+          </div>
+          <div class="flex flex-col items-center gap-1.5">
+            <span class="cross">×</span>
+            <span class="small text-ink/40 text-center">Konserven, TK</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-[1fr,120px,120px] md:grid-cols-[1.5fr,1fr,1fr] gap-4 md:gap-8 p-5 md:p-7 items-center border-b border-lineDark">
+          <div>
+            <p class="editorial text-[20px] md:text-[26px] text-ink">Rezepte</p>
+            <p class="small text-ink/55 mt-1">Generationen­wissen vs. Liefer­mischung</p>
+          </div>
+          <div class="flex flex-col items-center gap-1.5">
+            <span class="check">✓</span>
+            <span class="small text-ink/60 text-center">Haus­rezepte</span>
+          </div>
+          <div class="flex flex-col items-center gap-1.5">
+            <span class="cross">×</span>
+            <span class="small text-ink/40 text-center">Fertig­mischung</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-[1fr,120px,120px] md:grid-cols-[1.5fr,1fr,1fr] gap-4 md:gap-8 p-5 md:p-7 items-center border-b border-lineDark">
+          <div>
+            <p class="editorial text-[20px] md:text-[26px] text-ink">Ausbildung</p>
+            <p class="small text-ink/55 mt-1">Wer hat das gebacken?</p>
+          </div>
+          <div class="flex flex-col items-center gap-1.5">
+            <span class="check">✓</span>
+            <span class="small text-ink/60 text-center">12 Fach­kräfte</span>
+          </div>
+          <div class="flex flex-col items-center gap-1.5">
+            <span class="cross">×</span>
+            <span class="small text-ink/40 text-center">Bake-Off</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-[1fr,120px,120px] md:grid-cols-[1.5fr,1fr,1fr] gap-4 md:gap-8 p-5 md:p-7 items-center">
+          <div>
+            <p class="editorial text-[20px] md:text-[26px] text-ink">Anerkennung</p>
+            <p class="small text-ink/55 mt-1">Was Dritte sagen</p>
+          </div>
+          <div class="flex flex-col items-center gap-1.5">
+            <span class="check">✓</span>
+            <span class="small text-ink/60 text-center">2× Feinschmecker</span>
+          </div>
+          <div class="flex flex-col items-center gap-1.5">
+            <span class="cross">×</span>
+            <span class="small text-ink/40 text-center">—</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 flex flex-wrap items-center justify-between gap-6" data-reveal>
+      <p class="italica text-[24px] md:text-[34px] text-crust-deep">
+        "Eine der besten Bäckereien Deutsch­lands."
+      </p>
+      <a href="tel:+4968944589" class="btn btn-cream" style="background: var(--bg); color: var(--paper);">
+        <span>Den Unterschied probieren</span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────── PRESSESTIMMEN (dark) ─────────────────────────────── -->
+<section class="section-dark py-28 md:py-40 relative overflow-hidden">
+  <div class="crust-glow w-[400px] h-[400px] bg-crust top-[40%] left-[30%]"></div>
+
+  <div class="relative max-w-[1500px] mx-auto px-6 md:px-10">
+
+    <div class="grid md:grid-cols-12 gap-10 mb-16 md:mb-20">
+      <div class="md:col-span-7" data-reveal>
+        <p class="section-marker text-paper/70 mb-8">
+          <span class="sec-num">§ 06</span>
+          <span>Pressestimmen</span>
+        </p>
+        <h2 class="display text-[52px] md:text-[110px] leading-[0.9] text-paper">
+          Was andere<br/><span class="italica text-crust">über uns</span><br/>sagen.
+        </h2>
+      </div>
+      <div class="md:col-span-4 md:col-start-9 self-end" data-reveal>
+        <p class="body-prose text-[18px] leading-relaxed text-paper/75">
+          Zwei­fach vom <em class="italica">Feinschmecker</em> in die Liste der besten
+          Bäckereien Deutsch­lands aufgenommen. Was bleibt, ist die
+          Verpflichtung – jeden Morgen aufs Neue.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 md:gap-8" data-reveal-stagger>
+
+      <article class="card-dark p-6 md:p-8 flex flex-col">
+        <span class="quote-mark block leading-none mb-1">"</span>
+        <p class="editorial text-[22px] md:text-[26px] leading-snug -mt-4 mb-8 text-paper">
+          Eine der besten Bäckereien Deutsch­lands – das Hand­werk Weidmanns
+          steht für Qualität ohne Kompromiss.
+        </p>
+        <div class="mt-auto pt-5 border-t border-line flex items-center justify-between">
+          <div>
+            <p class="editorial text-[16px] text-paper">Der Feinschmecker</p>
+            <p class="small text-paper/55">Auszeichnung · 2013 & 2017</p>
+          </div>
+          <span class="seal w-[60px] h-[60px] rounded-full flex items-center justify-center text-[10px] text-center" style="line-height: 1.1;">
+            <span>F</span>
+          </span>
+        </div>
+      </article>
+
+      <article class="card-dark p-6 md:p-8 flex flex-col">
+        <span class="quote-mark block leading-none mb-1">"</span>
+        <p class="editorial text-[22px] md:text-[26px] leading-snug -mt-4 mb-8 text-paper">
+          Bei Weidmann backt seit drei Generationen eine Familie, die
+          weiß, was Brot mit der Zeit anstellt – und umgekehrt.
+        </p>
+        <div class="mt-auto pt-5 border-t border-line flex items-center justify-between">
+          <div>
+            <p class="editorial text-[16px] text-paper">Saarbrücker Zeitung</p>
+            <p class="small text-paper/55">Porträt · Cornelia Jung</p>
+          </div>
+          <p class="stars">★★★★★</p>
+        </div>
+      </article>
+
+      <article class="card-dark p-6 md:p-8 flex flex-col">
+        <span class="quote-mark block leading-none mb-1">"</span>
+        <p class="editorial text-[22px] md:text-[26px] leading-snug -mt-4 mb-8 text-paper">
+          St. Ingberts feinste Adresse für Brot, Brötchen und das ehrlichste
+          Stück Konditorei der Region.
+        </p>
+        <div class="mt-auto pt-5 border-t border-line flex items-center justify-between">
+          <div>
+            <p class="editorial text-[16px] text-paper">saarnews.com</p>
+            <p class="small text-paper/55">Bericht · 2017</p>
+          </div>
+          <p class="stars">★★★★★</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────── STEHKAFFEE · EXPAND-TO-BACKGROUND ─────────────────────────────── -->
+<section class="expand-section section-dark" id="expandSection">
+  <div class="expand-sticky">
+
+    <!-- Pre-state label (hidden as image expands) -->
+    <div class="expand-pre" id="expandPre">
+      <p class="section-marker text-paper/70 mb-3">
+        <span class="sec-num">§ 07</span>
+        <span>Vor Ort · Stehkaffee</span>
+      </p>
+      <p class="editorial text-[22px] md:text-[28px] text-paper/80">
+        Scrollen Sie weiter <span class="italica text-crust">↓</span>
+      </p>
+    </div>
+
+    <!-- The growing frame -->
+    <div class="expand-frame" id="expandFrame">
+      <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=2200&q=85&auto=format&fit=crop"
+           alt="Bäckerei-Interieur mit Stehkaffee"
+           class="expand-img" id="expandImg" loading="lazy" />
+
+      <!-- Gradient that appears as image fills viewport -->
+      <div class="expand-gradient" id="expandGradient"></div>
+
+      <!-- Content that fades in once image is full-bleed -->
+      <div class="expand-content on-dark-overlay" id="expandContent">
+        <div class="max-w-[1500px] mx-auto w-full px-6 md:px-10 flex flex-col justify-end h-full pb-16 md:pb-24">
+          <p class="section-marker mb-6" style="color: #D9B97E;">
+            <span class="sec-num" style="color: #E8C77D;">§ 07</span>
+            <span>Vor Ort · Stehkaffee</span>
+          </p>
+          <h2 class="display text-[44px] md:text-[112px] leading-[1.02] text-paper" style="letter-spacing: -0.025em;">
+            Ein Kaffee, ein <span class="italica" style="color: #E8C77D;">Hörnchen</span>,<br/>ein Halt.
+          </h2>
+          <p class="mt-7 max-w-[600px] body-prose text-[17px] md:text-[19px] text-paper/85">
+            Ein paar Minuten Pause am Stehtisch, ein frisch gebrühter Kaffee,
+            etwas aus der Vitrine. Park­plätze direkt vor der Tür.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#kontakt" class="btn btn-crust">
+              <span>Anfahrt anzeigen</span>
+              <span class="arrow">→</span>
+            </a>
+            <a href="tel:+4968944589" class="btn btn-ghost-dark" style="background: rgba(245,239,230,.08); backdrop-filter: blur(10px);">
+              <span>(06894) 45 89</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────── § 08  FÜR IHREN ANLASS (dark) ─────────────────────────────── -->
+<section class="section-dark py-28 md:py-40 relative overflow-hidden">
+  <div class="crust-glow w-[500px] h-[500px] bg-crust top-[10%] right-[10%]"></div>
+
+  <div class="max-w-[1500px] mx-auto px-6 md:px-10 relative">
+
+    <div class="grid md:grid-cols-12 gap-10 mb-16 md:mb-20">
+      <div class="md:col-span-7" data-reveal>
+        <p class="section-marker text-paper/70 mb-8">
+          <span class="sec-num">§ 08</span>
+          <span>Auf Bestellung</span>
+        </p>
+        <h2 class="display text-[52px] md:text-[120px] leading-[0.9] text-paper">
+          Für Ihren<br/><span class="italica text-crust">Anlass.</span>
+        </h2>
+      </div>
+      <div class="md:col-span-4 md:col-start-9 self-end" data-reveal>
+        <p class="body-prose text-[18px] leading-relaxed text-paper/75">
+          Hochzeits­torten, Geburts­tagskuchen, Petit‑Fours‑Etagen,
+          Brot­körbe für Empfänge: Wir fertigen Sonder­anfertigungen
+          auf Vorbestellung. Ein Anruf genügt.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6" data-reveal-stagger>
+
+      <article class="relative group overflow-hidden rounded-md">
+        <div class="img-wrap aspect-[4/5]">
+          <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=1100&q=85&auto=format&fit=crop"
+               alt="Hochzeitstorte" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-7 on-dark-overlay" style="background: linear-gradient(180deg, transparent 40%, rgba(28,23,20,.92) 100%);">
+          <p class="label text-wheat mb-2">№ 01</p>
+          <h3 class="display-2 text-[36px] md:text-[48px] text-paper">Hochzeit</h3>
+          <p class="small text-paper/70 mt-2">Mehrstöckige Torten · individuell</p>
+          <p class="label text-wheat mt-4">Vorlauf · 4 Wochen</p>
+        </div>
+      </article>
+
+      <article class="relative group overflow-hidden rounded-md">
+        <div class="img-wrap aspect-[4/5]">
+          <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=1100&q=85&auto=format&fit=crop"
+               alt="Geburtstagstorte" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-7 on-dark-overlay" style="background: linear-gradient(180deg, transparent 40%, rgba(28,23,20,.92) 100%);">
+          <p class="label text-wheat mb-2">№ 02</p>
+          <h3 class="display-2 text-[36px] md:text-[48px] text-paper">Geburts­tag</h3>
+          <p class="small text-paper/70 mt-2">Lieblingstorte · Schrift­zug</p>
+          <p class="label text-wheat mt-4">Vorlauf · 5 Tage</p>
+        </div>
+      </article>
+
+      <article class="relative group overflow-hidden rounded-md">
+        <div class="img-wrap aspect-[4/5]">
+          <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=1100&q=85&auto=format&fit=crop"
+               alt="Empfang & Catering" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-7 on-dark-overlay" style="background: linear-gradient(180deg, transparent 40%, rgba(28,23,20,.92) 100%);">
+          <p class="label text-wheat mb-2">№ 03</p>
+          <h3 class="display-2 text-[36px] md:text-[48px] text-paper">Empfang</h3>
+          <p class="small text-paper/70 mt-2">Petit‑Fours‑Etagen · Brot­körbe</p>
+          <p class="label text-wheat mt-4">Vorlauf · 7 Tage</p>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Inline CTA -->
+    <div class="mt-16 card-dark p-8 md:p-12" data-reveal>
+      <div class="grid md:grid-cols-[1fr,auto] gap-8 items-center">
+        <div>
+          <p class="label text-wheat mb-3">Persönliche Beratung</p>
+          <p class="display-2 text-[32px] md:text-[50px] leading-tight text-paper">
+            Erzählen Sie uns vom Anlass —<br/>
+            <span class="italica text-crust">wir kümmern uns um das Süße.</span>
+          </p>
+        </div>
+        <a href="tel:+4968944589" class="btn btn-crust justify-center">
+          <span>Anrufen · (06894) 45 89</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────── § 09  KONTAKT (cream) ─────────────────────────────── -->
+<section id="kontakt" class="section-cream py-28 md:py-40">
+  <div class="max-w-[1500px] mx-auto px-6 md:px-10">
+
+    <div class="grid md:grid-cols-12 gap-10 mb-16 md:mb-20">
+      <div class="md:col-span-7" data-reveal>
+        <p class="section-marker text-ink/70 mb-8">
+          <span class="sec-num">§ 09</span>
+          <span>Standort & Besuch</span>
+        </p>
+        <h2 class="display text-[58px] md:text-[120px] leading-[0.9] text-ink">
+          Kommen<br/>Sie <span class="italica text-crust-deep">vorbei.</span>
+        </h2>
+      </div>
+      <div class="md:col-span-5 self-end" data-reveal>
+        <p class="body-prose text-[18px] md:text-[20px] leading-relaxed text-ink/75">
+          Rufen Sie an, schauen Sie herein, bestellen Sie für einen
+          Anlass. Wir empfangen und beraten Sie gern direkt im Haus –
+          Park­plätze sind ausreichend vorhanden.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-2">
+          <span class="pill pill-light pill-crust"><span class="live-dot"></span> <span id="kontaktStatus">Heute geöffnet bis 18.00</span></span>
+          <span class="pill pill-light">Park­plätze vor der Tür</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card + map -->
+    <div class="grid md:grid-cols-12 gap-6 md:gap-8" data-reveal>
+
+      <div class="md:col-span-7">
+        <div class="card-cream p-6 md:p-10 h-full">
+          <div class="grid md:grid-cols-12 gap-10">
+
+            <div class="md:col-span-6">
+              <p class="label text-ink/60 mb-4">Bäckerei & Konditorei</p>
+              <p class="display-2 text-[36px] md:text-[54px] leading-tight text-ink">
+                Franz‑Josef <br/><span class="italica text-crust-deep">Weidmann</span>
+              </p>
+
+              <div class="mt-10 grid grid-cols-1 gap-6">
+                <div>
+                  <p class="label text-ink/60 mb-2">Anschrift</p>
+                  <p class="editorial text-[20px] leading-snug text-ink">
+                    Josefstaler Str. 216<br/>
+                    66386 St. Ingbert
+                  </p>
+                </div>
+                <div>
+                  <p class="label text-ink/60 mb-2">Telefon</p>
+                  <a href="tel:+4968944589" class="editorial text-[32px] text-ink text-underline-crust">(06894) 45 89</a>
+                </div>
+              </div>
+
+              <a href="tel:+4968944589" class="btn mt-8 w-full justify-center" style="background: var(--bg); color: var(--paper);">
+                <span>Jetzt anrufen</span>
+                <span class="arrow">→</span>
+              </a>
+            </div>
+
+            <div class="md:col-span-6">
+              <p class="label text-ink/60 mb-4">Öffnungs­zeiten</p>
+
+              <div class="border-t border-lineDark">
+                <div class="grid grid-cols-[1fr,auto] py-3.5 border-b border-lineDark items-baseline">
+                  <span class="editorial text-[19px] text-ink">Montag</span>
+                  <span class="italica text-ink/50 text-[17px]">Ruhetag</span>
+                </div>
+                <div class="grid grid-cols-[1fr,auto] py-3.5 border-b border-lineDark items-baseline">
+                  <span class="editorial text-[19px] text-ink">Dienstag</span>
+                  <span class="editorial text-[19px] text-ink">6.00 – 18.00</span>
+                </div>
+                <div class="grid grid-cols-[1fr,auto] py-3.5 border-b border-lineDark items-baseline">
+                  <span class="editorial text-[19px] text-ink">Mittwoch</span>
+                  <span class="editorial text-[19px] text-ink">6.00 – 18.00</span>
+                </div>
+                <div class="grid grid-cols-[1fr,auto] py-3.5 border-b border-lineDark items-baseline">
+                  <span class="editorial text-[19px] text-ink">Donnerstag</span>
+                  <span class="editorial text-[19px] text-ink">6.00 – 18.00</span>
+                </div>
+                <div class="grid grid-cols-[1fr,auto] py-3.5 border-b border-lineDark items-baseline">
+                  <span class="editorial text-[19px] text-ink">Freitag</span>
+                  <span class="editorial text-[19px] text-ink">6.00 – 18.00</span>
+                </div>
+                <div class="grid grid-cols-[1fr,auto] py-3.5 border-b border-lineDark items-baseline">
+                  <span class="editorial text-[19px] text-ink">Samstag</span>
+                  <span class="editorial text-[19px] text-ink">6.00 – 13.00</span>
+                </div>
+                <div class="grid grid-cols-[1fr,auto] py-3.5 items-baseline">
+                  <span class="editorial text-[19px] text-ink/50">Sonntag</span>
+                  <span class="italica text-ink/50 text-[17px]">geschlossen</span>
+                </div>
+              </div>
+
+              <p class="small text-ink/55 mt-6">
+                Für Bestellungen und Sonder­anfertigungen freuen wir uns
+                über Ihren Anruf vorab.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-5">
+        <div class="relative h-full min-h-[480px] rounded-md overflow-hidden card-cream">
+          <iframe
+            class="map-frame absolute inset-0 w-full h-full"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=7.090%2C49.272%2C7.115%2C49.282&layer=mapnik&marker=49.277%2C7.1025"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Karte: Bäckerei Weidmann, Josefstaler Str. 216, St. Ingbert"
+            style="border: 0;"></iframe>
+
+          <a href="https://www.google.com/maps/search/?api=1&query=Josefstaler+Str.+216,+66386+St.+Ingbert"
+             target="_blank" rel="noopener"
+             class="absolute left-4 bottom-4 right-4 card-cream p-4 hover:translate-y-[-2px] transition-transform">
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <p class="label text-ink/60 mb-1">So finden Sie uns</p>
+                <p class="editorial text-[16px] leading-tight text-ink">
+                  Josefstaler Str. 216 · 66386 St. Ingbert
+                </p>
+              </div>
+              <span class="label text-crust-deep">Öffnen →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────── FOOTER (dark) — wordmark CONTAINED ─────────────────────────────── -->
+<footer class="section-dark relative overflow-hidden">
+
+  <div class="relative max-w-[1500px] mx-auto px-6 md:px-10 pt-24 pb-12">
+
+    <!-- Top: brand + columns -->
+    <div class="grid md:grid-cols-12 gap-10">
+
+      <div class="md:col-span-5">
+        <p class="label text-wheat">Bäckerei & Konditorei</p>
+        <p class="display-2 text-[42px] md:text-[60px] mt-3 text-paper">
+          Weidmann.
+        </p>
+        <p class="body-prose mt-6 max-w-[420px] text-paper/70">
+          Hand­werk, das man schmeckt – seit drei Generationen
+          in St. Ingbert. Vom Feinschmecker zwei­fach ausgezeichnet
+          als eine der besten Bäckereien Deutsch­lands.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="tel:+4968944589" class="btn btn-crust">
+            <span>(06894) 45 89</span>
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Josefstaler+Str.+216,+66386+St.+Ingbert"
+             target="_blank" rel="noopener" class="btn btn-ghost-dark">
+            <span>Anfahrt</span>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="md:col-span-3">
+        <p class="label text-wheat mb-4">Besuch</p>
+        <p class="editorial text-[18px] leading-snug text-paper">
+          Josefstaler Str. 216<br/>
+          66386 St. Ingbert
+        </p>
+        <p class="small text-paper/55 mt-4">Mo Ruhetag</p>
+        <p class="small text-paper/55">Di–Fr 6.00 – 18.00</p>
+        <p class="small text-paper/55">Sa 6.00 – 13.00</p>
+      </div>
+
+      <div class="md:col-span-3 md:col-start-10 flex md:justify-end">
+        <div class="seal seal-tilt w-[150px] h-[150px] rounded-full flex items-center justify-center text-center">
+          <div class="px-3">
+            <p class="text-[8.5px] tracking-[.22em] uppercase opacity-90 mb-1">Der Feinschmecker</p>
+            <p class="editorial text-[30px] leading-none" style="color:#f3e2b6;">2013</p>
+            <p class="text-[8.5px] tracking-[.22em] uppercase opacity-90 mt-1">& 2017</p>
+            <p class="text-[8.5px] tracking-[.18em] uppercase opacity-80 mt-2 italic">
+              Deutschlands<br/>beste Bäckereien
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="rule-dark mt-16 mb-8" />
+
+    <div class="flex flex-wrap items-center justify-between gap-6">
+      <p class="label text-paper/55">© <span id="year"></span> Bäckerei & Konditorei Franz‑Josef Weidmann</p>
+      <div class="flex items-center gap-8 label text-paper/70">
+        <a href="#impressum" class="hover:text-paper">Impressum</a>
+        <a href="#datenschutz" class="hover:text-paper">Datenschutz</a>
+        <a href="#top" class="hover:text-paper">↑ Nach oben</a>
+      </div>
+    </div>
+
+    <!-- Wordmark — PLAKATIV but properly contained -->
+    <div class="wordmark-wrap mt-10">
+      <span class="wordmark-text text-[26vw] md:text-[19vw]">Weidmann</span>
+    </div>
+
+  </div>
+</footer>
+
+</main>
+
+<!-- Sticky mobile call bar -->
+<div class="mobile-bar">
+  <a href="tel:+4968944589"><span class="live-dot"></span>Anrufen</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Josefstaler+Str.+216,+66386+St.+Ingbert" target="_blank" rel="noopener">Anfahrt →</a>
+</div>
+
+<!-- GSAP scroll animations (native browser scrolling) -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  (function(){
+    const today = new Date().getDay();
+    const navEl = document.getElementById('navStatus');
+    const kontaktEl = document.getElementById('kontaktStatus');
+    let text = 'Heute geöffnet · 6.00 — 18.00';
+    let kontaktText = 'Heute geöffnet bis 18.00';
+    if (today === 1) { text = 'Heute Ruhetag'; kontaktText = 'Heute Ruhetag'; }
+    else if (today === 0) { text = 'Sonntag · geschlossen'; kontaktText = 'Sonntag · geschlossen'; }
+    else if (today === 6) { text = 'Heute geöffnet · 6.00 — 13.00'; kontaktText = 'Heute geöffnet bis 13.00'; }
+    if (navEl) navEl.textContent = text;
+    if (kontaktEl) kontaktEl.textContent = kontaktText;
+  })();
+
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 24) nav.classList.add('is-scrolled');
+    else nav.classList.remove('is-scrolled');
+  };
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  const mBtn = document.getElementById('menuBtn');
+  const mClose = document.getElementById('menuClose');
+  const mMenu = document.getElementById('mobileMenu');
+  if (mBtn) mBtn.addEventListener('click', () => mMenu.classList.remove('hidden'));
+  if (mClose) mClose.addEventListener('click', () => mMenu.classList.add('hidden'));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('[data-reveal], [data-reveal-stagger], [data-line]').forEach(el => io.observe(el));
+
+  // Counter
+  const counters = document.querySelectorAll('.counter');
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseInt(el.dataset.target, 10);
+      const duration = 1600;
+      const start = performance.now();
+      const isPadded = el.dataset.target.startsWith('0') && target < 10;
+      const tick = (now) => {
+        const p = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const val = Math.round(eased * target);
+        el.textContent = isPadded && val < 10 ? '0' + val : val;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      counterIO.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => counterIO.observe(c));
+
+  // Headline line reveal — trigger on hero load
+  setTimeout(() => {
+    document.querySelectorAll('[data-line]').forEach(el => el.classList.add('is-in'));
+  }, 250);
+
+  // ────────────────────────────────────────────────────────────────────
+  //  GSAP scroll animations — element-level only, native page scroll
+  // ────────────────────────────────────────────────────────────────────
+  window.addEventListener('load', () => {
+    if (typeof gsap === 'undefined') return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduce) return;
+
+    // — Parallax: each element moves at its own speed via data-parallax (-100..100)
+    gsap.utils.toArray('[data-parallax]').forEach(el => {
+      const speed = parseFloat(el.dataset.parallax) || 0;
+      gsap.fromTo(el,
+        { y: -speed },
+        {
+          y: speed,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 0.6,
+          }
+        }
+      );
+    });
+
+    // — Hero image scale-in tied to scroll
+    gsap.to('[data-img-scale]', {
+      scale: 1.15,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '[data-img-scale]',
+        start: 'top top',
+        end: '+=600',
+        scrub: 1,
+      }
+    });
+
+    // — Scroll progress bar
+    const progress = document.getElementById('scrollProgress');
+    if (progress) {
+      gsap.to(progress, {
+        scaleX: 1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: document.body,
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 0.2,
+        }
+      });
+    }
+
+    // — Floating CTA: appears after hero scroll
+    const cta = document.getElementById('floatingCta');
+    if (cta) {
+      ScrollTrigger.create({
+        start: 'top top-=600',
+        end: 'max',
+        onUpdate: (self) => {
+          if (self.scroll() > 700) cta.classList.add('is-visible');
+          else cta.classList.remove('is-visible');
+        }
+      });
+    }
+
+    // — Section section-marker fade-in stagger
+    gsap.utils.toArray('.section-marker').forEach(marker => {
+      gsap.from(marker, {
+        opacity: 0,
+        y: 14,
+        duration: 1.0,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: marker,
+          start: 'top 85%',
+        }
+      });
+    });
+
+    // — Stats counter row: subtle stagger Y on scroll
+    gsap.utils.toArray('.stat-num').forEach((num, i) => {
+      gsap.from(num, {
+        y: 40,
+        opacity: 0,
+        duration: 1.1,
+        delay: i * 0.08,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: num,
+          start: 'top 88%',
+        }
+      });
+    });
+
+    // — Timeline points pop-in
+    gsap.utils.toArray('.timeline-rail .figure-num').forEach((p, i) => {
+      gsap.from(p, {
+        scale: 0.6,
+        opacity: 0,
+        duration: 0.9,
+        delay: i * 0.12,
+        ease: 'back.out(1.6)',
+        scrollTrigger: {
+          trigger: '.timeline-rail',
+          start: 'top 80%',
+        }
+      });
+    });
+
+    // — Big footer wordmark: subtle scroll-driven scale & x-drift
+    const wordmark = document.querySelector('.wordmark-text');
+    if (wordmark) {
+      gsap.fromTo(wordmark,
+        { letterSpacing: '-0.025em', y: 60, opacity: 0.6 },
+        {
+          letterSpacing: '-0.055em', y: 0, opacity: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.wordmark-wrap',
+            start: 'top bottom',
+            end: 'bottom bottom',
+            scrub: 0.8,
+          }
+        }
+      );
+    }
+
+    // ─────────────────────────────────────────────────────────────────
+    //  HORIZONTAL PINNED SCROLL — "Die Vitrine"
+    // ─────────────────────────────────────────────────────────────────
+    const hSection = document.getElementById('hScrollSection');
+    const hTrack   = document.getElementById('hScrollTrack');
+    if (hSection && hTrack) {
+      const getDistance = () => Math.max(0, hTrack.scrollWidth - window.innerWidth + 80);
+      gsap.to(hTrack, {
+        x: () => -getDistance(),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: hSection,
+          start: 'top top',
+          end: () => `+=${getDistance()}`,
+          pin: true,
+          scrub: 0.4,
+          invalidateOnRefresh: true,
+          anticipatePin: 1,
+        }
+      });
+    }
+
+    // ─────────────────────────────────────────────────────────────────
+    //  EXPAND-TO-BACKGROUND: image grows from card → full-bleed background,
+    //  then content fades in on top. Apple-style scroll narrative.
+    // ─────────────────────────────────────────────────────────────────
+    const expandSection = document.getElementById('expandSection');
+    if (expandSection) {
+      const frame = document.getElementById('expandFrame');
+      const img = document.getElementById('expandImg');
+      const gradient = document.getElementById('expandGradient');
+      const content = document.getElementById('expandContent');
+      const pre = document.getElementById('expandPre');
+
+      gsap.timeline({
+        defaults: { ease: 'none' },
+        scrollTrigger: {
+          trigger: expandSection,
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 0.4,
+          fastScrollEnd: true,
+        }
+      })
+      // Phase 1: clip-path inset shrinks → frame fills viewport. GPU-only, no reflow.
+      .to(frame, {
+        '--inset-y': '0vh',
+        '--inset-x': '0vw',
+        '--radius': '0px',
+      }, 0)
+      .to(img, { scale: 1 }, 0)
+      .to(pre, { opacity: 0, y: -20, duration: 0.4 }, 0)
+      // Phase 2: gradient fades in
+      .to(gradient, { opacity: 1 }, 0.35)
+      // Phase 3: content slides + fades in
+      .to(content, { opacity: 1, y: 0, duration: 0.5 }, 0.55);
+    }
+
+    // — Refresh ScrollTrigger after images load
+    setTimeout(() => ScrollTrigger.refresh(), 600);
+  });
+</script>
+
+</body>
+</html>
