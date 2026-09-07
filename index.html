@@ -835,6 +835,277 @@
     background: var(--crust);
     transform: scale(1.4);
   }
+
+  /* ═══════════════════════════════════════════════════════════════════
+     LIQUID GLASS · SCROLLYTELLING · MAGNETIC · DEPTH  (additive layer)
+     ═══════════════════════════════════════════════════════════════════ */
+
+  :root {
+    --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1);
+    --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  /* ─── Liquid Glass core ─── */
+  .glass {
+    position: relative;
+    background: rgba(250, 246, 239, 0.55);
+    backdrop-filter: blur(22px) saturate(180%) brightness(1.02);
+    -webkit-backdrop-filter: blur(22px) saturate(180%) brightness(1.02);
+    border: 1px solid rgba(28, 23, 20, 0.09);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.55),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+      0 20px 60px -20px rgba(28, 23, 20, 0.28);
+    isolation: isolate;
+  }
+  .glass::before {
+    content: "";
+    position: absolute; inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(135deg, rgba(255,255,255,.30) 0%, rgba(255,255,255,0) 40%);
+    z-index: 0;
+  }
+  .glass::after {
+    content: "";
+    position: absolute; inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: .07;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    z-index: 0;
+  }
+  .glass > * { position: relative; z-index: 1; }
+
+  .glass-strong {
+    background: rgba(250, 246, 239, 0.42);
+    backdrop-filter: blur(32px) saturate(200%) brightness(1.04);
+    -webkit-backdrop-filter: blur(32px) saturate(200%) brightness(1.04);
+  }
+
+  .glass-dark {
+    background: rgba(28, 23, 20, 0.42);
+    color: var(--paper);
+    border-color: rgba(255, 255, 255, 0.10);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.16),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+      0 24px 60px -20px rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+  }
+  .glass-dark::before {
+    background: linear-gradient(135deg, rgba(255,255,255,.14) 0%, rgba(255,255,255,0) 45%);
+  }
+
+  /* Specular sheen — sweeps across on hover. Use as child: <span class="glass-sheen"></span> */
+  .glass-sheen {
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .glass-sheen::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(120deg,
+      transparent 30%,
+      rgba(255,255,255,.45) 48%,
+      rgba(255,255,255,.85) 50%,
+      rgba(255,255,255,.45) 52%,
+      transparent 70%);
+    transform: translateX(-140%);
+    transition: transform 900ms var(--ease-out-strong);
+    mix-blend-mode: overlay;
+  }
+  .glass:hover > .glass-sheen::after,
+  .glass-hover:hover > .glass-sheen::after {
+    transform: translateX(140%);
+  }
+
+  /* ─── Button polish: press feedback ─── */
+  .btn { transition: transform .35s cubic-bezier(.16,1,.3,1), background-color .35s, color .35s, box-shadow .35s, filter .35s; }
+  .btn:active { transform: scale(0.97) !important; }
+
+  /* ─── Magnetic hover base (JS wires transform) ─── */
+  .magnetic {
+    transition: transform 500ms var(--ease-out-strong);
+    will-change: transform;
+  }
+
+  /* ─── Nav upgrade: full liquid glass on scroll ─── */
+  body header.nav.is-scrolled {
+    background: rgba(250, 246, 239, 0.55) !important;
+    backdrop-filter: blur(30px) saturate(200%) brightness(1.02) !important;
+    -webkit-backdrop-filter: blur(30px) saturate(200%) brightness(1.02) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.55),
+      0 8px 24px -12px rgba(28, 23, 20, 0.18);
+    border-bottom-color: rgba(28, 23, 20, 0.06) !important;
+  }
+
+  /* ─── Depth blobs behind hero (parallax layers) ─── */
+  #hero { isolation: isolate; }
+  .hero-depth {
+    position: absolute;
+    inset: -12% -8% -20% -8%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+  }
+  .hero-blob {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(120px);
+    opacity: 0.55;
+    will-change: transform;
+    mix-blend-mode: multiply;
+  }
+  .hero-blob-1 { width: 620px; height: 620px; top: -14%;  left: -8%;  background: radial-gradient(circle at 30% 30%, rgba(163,123,54,.55), rgba(163,123,54,0) 65%); }
+  .hero-blob-2 { width: 520px; height: 520px; top: 30%;   right: -6%; background: radial-gradient(circle at 40% 40%, rgba(180,137,47,.45), rgba(180,137,47,0) 65%); }
+  .hero-blob-3 { width: 380px; height: 380px; bottom: -12%; left: 38%; background: radial-gradient(circle at 50% 50%, rgba(126, 92, 38, .40), rgba(126, 92, 38, 0) 65%); }
+  @media (max-width: 767px) {
+    .hero-blob { filter: blur(80px); opacity: 0.45; }
+    .hero-blob-1 { width: 380px; height: 380px; }
+    .hero-blob-2 { width: 320px; height: 320px; }
+    .hero-blob-3 { width: 260px; height: 260px; }
+  }
+
+  /* ─── Section chip (running section indicator, desktop only) ─── */
+  .section-chip {
+    position: fixed;
+    left: 22px;
+    top: 50%;
+    padding: 10px 14px 10px 12px;
+    border-radius: 999px;
+    z-index: 87;
+    display: none;
+    align-items: center;
+    gap: .55rem;
+    opacity: 0;
+    transform: translateY(-50%) translateX(-14px);
+    transition: opacity 600ms var(--ease-out-strong), transform 600ms var(--ease-out-strong);
+    pointer-events: none;
+    white-space: nowrap;
+    max-width: 240px;
+  }
+  .section-chip .label { color: var(--paper); font-size: 10.5px; }
+  .section-chip .live-dot { flex: 0 0 auto; }
+  .section-chip.is-visible {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+  @media (min-width: 1024px) {
+    .section-chip { display: inline-flex; }
+  }
+
+  /* ─── STICKY SEQUENCE (stacked scrollytelling) ─── */
+  .stack-section {
+    position: relative;
+    height: 340vh;
+  }
+  .stack-pin {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8vh 0 6vh;
+  }
+  .stack-header {
+    flex: 0 0 auto;
+    padding: 0 6vw;
+  }
+  .stack-viewport {
+    flex: 1 1 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3vh 0 0;
+  }
+  .stack-frame {
+    position: relative;
+    width: min(88vw, 1100px);
+    aspect-ratio: 16/10;
+    max-height: 66vh;
+  }
+  .stack-card {
+    position: absolute;
+    inset: 0;
+    border-radius: 26px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(60px) scale(0.94);
+    will-change: transform, opacity;
+    box-shadow: 0 40px 100px -32px rgba(28, 23, 20, 0.55);
+  }
+  .stack-card:first-child { opacity: 1; transform: translateY(0) scale(1); }
+  .stack-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .stack-card::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(28,23,20,0) 40%, rgba(28,23,20,0.75) 100%);
+    pointer-events: none;
+  }
+  .stack-caption {
+    position: absolute;
+    left: 22px; bottom: 22px;
+    padding: 16px 20px;
+    border-radius: 18px;
+    max-width: 380px;
+    z-index: 3;
+  }
+  @media (min-width: 768px) {
+    .stack-caption { left: 30px; bottom: 30px; padding: 18px 24px; }
+  }
+  .stack-index {
+    position: absolute;
+    right: 22px; top: 22px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    z-index: 3;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+  }
+  .stack-progress {
+    position: absolute;
+    right: 28px; bottom: 34px;
+    display: flex;
+    gap: 8px;
+    z-index: 5;
+  }
+  .stack-progress-dot {
+    width: 24px; height: 3px;
+    background: rgba(255,255,255,0.28);
+    border-radius: 999px;
+    transition: background 500ms var(--ease-out-strong), transform 500ms var(--ease-out-strong);
+    transform-origin: center;
+  }
+  .stack-progress-dot.active {
+    background: var(--crust);
+    transform: scaleY(1.8);
+  }
+
+  /* Prefers-reduced-motion cleanups */
+  @media (prefers-reduced-motion: reduce) {
+    .glass-sheen::after { transition: none; }
+    .magnetic { transition: none; }
+  }
 </style>
 </head>
 
@@ -850,6 +1121,13 @@
     <span>Anrufen · (06894) 45 89</span>
     <span class="arrow">→</span>
   </a>
+</div>
+
+<!-- Section chip · running section indicator (desktop only) -->
+<div class="section-chip glass glass-dark" id="sectionChip" aria-hidden="true">
+  <span class="live-dot"></span>
+  <span class="label" id="sectionChipLabel">Feinschmecker</span>
+  <span class="glass-sheen"></span>
 </div>
 
 <!-- ─────────────────────────────── NAV ─────────────────────────────── -->
@@ -896,6 +1174,13 @@
 
 <!-- ─────────────────────────────── HERO ─────────────────────────────── -->
 <section id="hero" class="section-dark relative pt-24 md:pt-28 pb-12 md:pb-16 overflow-hidden">
+
+  <!-- Depth parallax blobs (warm ambient) -->
+  <div class="hero-depth" aria-hidden="true">
+    <div class="hero-blob hero-blob-1" data-parallax="60"></div>
+    <div class="hero-blob hero-blob-2" data-parallax="-45"></div>
+    <div class="hero-blob hero-blob-3" data-parallax="35"></div>
+  </div>
 
   <!-- Decorative wheat -->
   <svg class="absolute -left-6 top-32 w-[150px] md:w-[200px] opacity-25 sway hidden md:block" viewBox="0 0 100 220" fill="none">
@@ -1587,6 +1872,73 @@
 </section>
 
 
+<!-- ─────────────────────────────── § 03·B  MOMENTAUFNAHMEN (sticky sequence) ─────────────────────────────── -->
+<section class="stack-section section-cream" id="stackSection">
+  <div class="stack-pin">
+    <div class="stack-header">
+      <div class="max-w-[1500px] mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+        <p class="section-marker text-ink/70">
+          <span class="sec-num">§ 03·B</span>
+          <span>Momentaufnahmen · Ein Morgen in der Backstube</span>
+        </p>
+        <p class="label text-ink/50">scroll · 3 frames</p>
+      </div>
+    </div>
+
+    <div class="stack-viewport">
+      <div class="stack-frame" id="stackFrame">
+
+        <article class="stack-card" data-stack="0">
+          <img src="https://images.unsplash.com/photo-1568254183919-78a4f43a2877?w=1800&q=85&auto=format&fit=crop"
+               alt="Frische Laibe kurz vor der Öffnung" class="stack-img" loading="lazy" />
+          <span class="stack-index glass glass-dark">Frame 01</span>
+          <div class="stack-caption glass glass-dark">
+            <p class="editorial text-[20px] md:text-[24px] leading-tight text-paper">
+              04·12 Uhr — der erste Laib verlässt den Ofen.
+            </p>
+            <p class="small text-paper/60 mt-2">Sauerteig · 36 h Ruhe</p>
+            <span class="glass-sheen"></span>
+          </div>
+        </article>
+
+        <article class="stack-card" data-stack="1">
+          <img src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?w=1800&q=85&auto=format&fit=crop"
+               alt="Croissants in Vorbereitung" class="stack-img" loading="lazy" />
+          <span class="stack-index glass glass-dark">Frame 02</span>
+          <div class="stack-caption glass glass-dark">
+            <p class="editorial text-[20px] md:text-[24px] leading-tight text-paper">
+              05·30 Uhr — Croissants gehen zum dritten Mal auf.
+            </p>
+            <p class="small text-paper/60 mt-2">27 Lagen · französische Butter</p>
+            <span class="glass-sheen"></span>
+          </div>
+        </article>
+
+        <article class="stack-card" data-stack="2">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1800&q=85&auto=format&fit=crop"
+               alt="Auslage kurz vor der Öffnung" class="stack-img" loading="lazy" />
+          <span class="stack-index glass glass-dark">Frame 03</span>
+          <div class="stack-caption glass glass-dark">
+            <p class="editorial text-[20px] md:text-[24px] leading-tight text-paper">
+              06·00 Uhr — die Tür geht auf. Die Vitrine ist voll.
+            </p>
+            <p class="small text-paper/60 mt-2">Frisch, warm, jeden Morgen</p>
+            <span class="glass-sheen"></span>
+          </div>
+        </article>
+
+        <div class="stack-progress" aria-hidden="true">
+          <span class="stack-progress-dot active" data-dot="0"></span>
+          <span class="stack-progress-dot" data-dot="1"></span>
+          <span class="stack-progress-dot" data-dot="2"></span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- ─────────────────────────────── § 04  BACKSTUBE (dark) ─────────────────────────────── -->
 <section id="backstube" class="section-dark py-28 md:py-40 relative overflow-hidden">
   <div class="crust-glow w-[500px] h-[500px] bg-crust top-[20%] right-[10%]"></div>
@@ -2080,6 +2432,61 @@
 </section>
 
 
+<!-- ─────────────────────────────── § 08·B  HANDWERK · EXPAND-TO-BACKGROUND ─────────────────────────────── -->
+<section class="expand-section section-cream" id="expandSection2">
+  <div class="expand-sticky" style="background: var(--paper);">
+
+    <!-- Pre-state label (hidden as image expands) -->
+    <div class="expand-pre" id="expandPre2">
+      <p class="section-marker text-ink/70 mb-3">
+        <span class="sec-num">§ 08·B</span>
+        <span>Handwerk · Nahaufnahme</span>
+      </p>
+      <p class="editorial text-[22px] md:text-[28px] text-ink/70">
+        Ein letzter Blick <span class="italica text-crust">↓</span>
+      </p>
+    </div>
+
+    <!-- The growing frame -->
+    <div class="expand-frame" id="expandFrame2">
+      <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=2200&q=85&auto=format&fit=crop"
+           alt="Handwerklich hergestelltes Brot in Nahaufnahme"
+           class="expand-img" id="expandImg2" loading="lazy" />
+
+      <div class="expand-gradient" id="expandGradient2"></div>
+
+      <div class="expand-content on-dark-overlay" id="expandContent2">
+        <div class="max-w-[1500px] mx-auto w-full px-6 md:px-10 flex flex-col justify-end h-full pb-16 md:pb-24">
+          <p class="section-marker mb-6" style="color: #D9B97E;">
+            <span class="sec-num" style="color: #E8C77D;">§ 08·B</span>
+            <span>Handwerk · Nahaufnahme</span>
+          </p>
+          <h2 class="display text-[44px] md:text-[112px] leading-[1.02] text-paper" style="letter-spacing: -0.025em;">
+            Kein Rezept. Ein <span class="italica" style="color: #E8C77D;">Ritual</span>.
+          </h2>
+          <p class="mt-7 max-w-[620px] body-prose text-[17px] md:text-[19px] text-paper/85">
+            Jeder Handgriff sitzt seit drei Generationen. Kein Automat versteht,
+            wann ein Teig bereit ist. Wir schon.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#sortiment" class="btn btn-crust magnetic">
+              <span>Zurück zum Sortiment</span>
+              <span class="arrow">↑</span>
+            </a>
+            <a href="#kontakt" class="btn btn-ghost-dark magnetic" style="background: rgba(245,239,230,.08); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+              <span>Vorbeikommen</span>
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
 <!-- ─────────────────────────────── § 09  KONTAKT (cream) ─────────────────────────────── -->
 <section id="kontakt" class="section-cream py-28 md:py-40">
   <div class="max-w-[1500px] mx-auto px-6 md:px-10">
@@ -2373,6 +2780,82 @@
   }, 250);
 
   // ────────────────────────────────────────────────────────────────────
+  //  Section chip — reflects the current section as user scrolls
+  // ────────────────────────────────────────────────────────────────────
+  (function () {
+    const chip = document.getElementById('sectionChip');
+    const label = document.getElementById('sectionChipLabel');
+    if (!chip || !label) return;
+    const map = [
+      { sel: '#hero',           name: 'Feinschmecker · 2013 & 2017' },
+      { sel: '#philosophie',    name: 'Philosophie' },
+      { sel: '#sortiment',      name: 'Sortiment' },
+      { sel: '#hScrollSection', name: 'Vitrine' },
+      { sel: '#stackSection',   name: 'Momentaufnahmen' },
+      { sel: '#backstube',      name: 'Backstube' },
+      { sel: '#trennt',         name: 'Was uns trennt' },
+      { sel: '#expandSection',  name: 'Stehkaffee' },
+      { sel: '#expandSection2', name: 'Handwerk · Nahaufnahme' },
+      { sel: '#kontakt',        name: 'Kontakt' },
+    ];
+    const targets = map
+      .map(m => ({ el: document.querySelector(m.sel), name: m.name }))
+      .filter(x => x.el);
+    if (!targets.length) return;
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const hit = targets.find(t => t.el === e.target);
+          if (hit) label.textContent = hit.name;
+        }
+      });
+    }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+    targets.forEach(t => io.observe(t.el));
+
+    let visible = false;
+    const onChipScroll = () => {
+      const y = window.scrollY;
+      const near = document.body.scrollHeight - window.innerHeight - 400;
+      const should = y > 700 && y < near;
+      if (should !== visible) {
+        visible = should;
+        chip.classList.toggle('is-visible', visible);
+      }
+    };
+    document.addEventListener('scroll', onChipScroll, { passive: true });
+    onChipScroll();
+  })();
+
+  // ────────────────────────────────────────────────────────────────────
+  //  Magnetic hover on buttons — subtle cursor attraction
+  // ────────────────────────────────────────────────────────────────────
+  (function () {
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!canHover || reduce) return;
+    document.querySelectorAll('.btn, .magnetic').forEach(el => {
+      let raf = null;
+      const onMove = (ev) => {
+        const r = el.getBoundingClientRect();
+        const dx = ev.clientX - (r.left + r.width / 2);
+        const dy = ev.clientY - (r.top + r.height / 2);
+        const strength = 0.18;
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          el.style.transform = `translate3d(${dx * strength}px, ${dy * strength}px, 0)`;
+        });
+      };
+      const onLeave = () => {
+        if (raf) cancelAnimationFrame(raf);
+        el.style.transform = '';
+      };
+      el.addEventListener('pointermove', onMove);
+      el.addEventListener('pointerleave', onLeave);
+    });
+  })();
+
+  // ────────────────────────────────────────────────────────────────────
   //  GSAP scroll animations — element-level only, native page scroll
   // ────────────────────────────────────────────────────────────────────
   window.addEventListener('load', () => {
@@ -2558,6 +3041,79 @@
       .to(gradient, { opacity: 1 }, 0.35)
       // Phase 3: content slides + fades in
       .to(content, { opacity: 1, y: 0, duration: 0.5 }, 0.55);
+    }
+
+    // ─────────────────────────────────────────────────────────────────
+    //  STICKY SEQUENCE — stacked cards, scroll-driven reveal
+    // ─────────────────────────────────────────────────────────────────
+    const stackSection = document.getElementById('stackSection');
+    if (stackSection) {
+      const cards = stackSection.querySelectorAll('.stack-card');
+      const dots  = stackSection.querySelectorAll('.stack-progress-dot');
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: stackSection,
+          start: 'top top',
+          end: 'bottom bottom',
+          pin: '.stack-pin',
+          pinType: 'fixed',
+          scrub: 0.4,
+          invalidateOnRefresh: true,
+          anticipatePin: 1,
+          onUpdate: (self) => {
+            const idx = Math.min(cards.length - 1, Math.floor(self.progress * cards.length));
+            dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+          }
+        }
+      });
+
+      cards.forEach((card, i) => {
+        if (i === 0) {
+          tl.to(card, { scale: 0.96, opacity: 0.55, ease: 'none' }, i * 1);
+        } else {
+          tl.fromTo(card,
+            { y: 60, scale: 0.94, opacity: 0 },
+            { y: 0,  scale: 1,    opacity: 1, ease: 'power2.out', duration: 0.6 },
+            i * 1
+          );
+          if (i < cards.length - 1) {
+            tl.to(card, { scale: 0.96, opacity: 0.55, ease: 'none' }, i * 1 + 0.9);
+          }
+        }
+      });
+    }
+
+    // ─────────────────────────────────────────────────────────────────
+    //  SECOND EXPAND-TO-BACKGROUND — Handwerk · Nahaufnahme
+    // ─────────────────────────────────────────────────────────────────
+    const expandSection2 = document.getElementById('expandSection2');
+    if (expandSection2) {
+      const frame2    = document.getElementById('expandFrame2');
+      const img2      = document.getElementById('expandImg2');
+      const gradient2 = document.getElementById('expandGradient2');
+      const content2  = document.getElementById('expandContent2');
+      const pre2      = document.getElementById('expandPre2');
+
+      gsap.timeline({
+        defaults: { ease: 'none' },
+        scrollTrigger: {
+          trigger: expandSection2,
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 0.4,
+          fastScrollEnd: true,
+        }
+      })
+      .to(frame2, {
+        '--inset-y': '0vh',
+        '--inset-x': '0vw',
+        '--radius': '0px',
+      }, 0)
+      .to(img2, { scale: 1 }, 0)
+      .to(pre2, { opacity: 0, y: -20, duration: 0.4 }, 0)
+      .to(gradient2, { opacity: 1 }, 0.35)
+      .to(content2, { opacity: 1, y: 0, duration: 0.5 }, 0.55);
     }
 
     // — Refresh ScrollTrigger after images load
